@@ -10,10 +10,10 @@ public:
     public:\
     virtual TrustEngine::Reflexion::Descriptor const * getDescriptor() const; \
     static TrustEngine::Reflexion::Descriptor const * getClassDescriptor(); \
-    static const bool isTemplateClass = false;\
+    static const bool _isTemplateClass = false;\
     static std::string const & getClassName();\
     private:\
-    typedef TrustEngine::Reflexion::NO_PARENT_CLASS R_ParentClass;
+    typedef TrustEngine::Reflexion::NO_PARENT_CLASS Reflected_ParentClass;
 
 
 
@@ -21,18 +21,18 @@ public:
     public:\
     virtual TrustEngine::Reflexion::Descriptor const * getDescriptor() const;\
     static TrustEngine::Reflexion::Descriptor const * getClassDescriptor();\
-    static const bool isTemplateClass = false;\
+    static const bool _isTemplateClass = false;\
     static std::string const & getClassName();\
     private:\
-    typedef ParentClass R_ParentClass;
+    typedef ParentClass Reflected_ParentClass;
 
 #define REFLECTED_TEMPLATE_CLASS\
     private:\
-    typedef NO_PARENT_CLASS R_ParentClass; \
+    typedef NO_PARENT_CLASS Reflected_ParentClass; \
 
 #define REFLECTED_SUPER_TEMPLATE_CLASS(ParentClass)\
     private:\
-    typedef ParentClass R_ParentClass; \
+    typedef ParentClass Reflected_ParentClass; \
 
 
 
@@ -56,7 +56,7 @@ public:
                                         }\
         ClassName * memory = nullptr;\
         Descriptor * newDescriptor = DescriptorRegistry::createDescriptor<GenericDescriptor<ClassName>>();\
-        newDescriptor->setParentClassDescriptor(R_ParentClass::getClassDescriptor());
+        newDescriptor->setParentClassDescriptor(Reflected_ParentClass::getClassDescriptor());
 
 
 #define DEFINE_FIELD(fieldname)\
@@ -70,8 +70,8 @@ public:
 #define TEMPLATE_CLASS_BEGIN(ClassName,InferType)\
 private:\
     typedef InferType _InferType; \
-    static const int inferTypeNumber = 1;\
-    static const bool isTemplateClass = true;\
+    static const int _inferTypeNumber = 1;\
+    static const bool _isTemplateClass = true;\
     friend class TrustEngine::Reflexion::GenericDescriptor< ClassName<InferType> > ;\
 public:\
     static std::string const & getClassName(){\
@@ -94,7 +94,7 @@ public:\
         }\
         ClassName<InferType> * memory = nullptr;\
         GenericDescriptor<ClassName<InferType>> * newDescriptor = (GenericDescriptor<ClassName<InferType>>*)DescriptorRegistry::createDescriptor<GenericDescriptor<ClassName<InferType>>>();\
-        newDescriptor->setParentClassDescriptor(R_ParentClass::getClassDescriptor());\
+        newDescriptor->setParentClassDescriptor(Reflected_ParentClass::getClassDescriptor());\
         newDescriptor->addInferType<InferType>();
 
 

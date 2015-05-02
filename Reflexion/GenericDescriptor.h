@@ -29,7 +29,7 @@ public:
 	template<typename InferType>
 	inline void addInferType();
 
-	virtual Descriptor const * getParentClassDescriptor(){
+	virtual Descriptor const * getParentClassDescriptor() const {
 		return parentClassDescriptor;
 	}
 };
