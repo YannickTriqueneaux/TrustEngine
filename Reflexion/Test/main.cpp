@@ -86,7 +86,7 @@ void main(){
     getDescriptorOf<ParentClass>();
     getDescriptorOf<SuperClass>();
     getDescriptorOf<ChildClass>();
-    getDescriptorOf<TempClass<SuperClass>>();
+    getDescriptorOf<TempClass<SuperClass>>(); 
     getDescriptorOf<TemplChild>();
     DescriptorRegistry::printDescriptorList();
 
