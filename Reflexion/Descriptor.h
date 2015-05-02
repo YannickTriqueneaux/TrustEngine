@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 class Descriptor{
 	friend class DescriptorRegistry;
@@ -34,4 +34,4 @@ private:
 };
 
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE

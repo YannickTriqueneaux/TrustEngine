@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 
 std::string const NativeDescriptor<bool>::descriptorName = _stringize(NativeDescriptor<bool>);
@@ -9,4 +9,4 @@ std::string const NativeDescriptor<float>::descriptorName = _stringize(NativeDes
 std::string const NativeDescriptor<double>::descriptorName = _stringize(NativeDescriptor<double>);
 std::string const NativeDescriptor<unsigned int>::descriptorName = _stringize(NativeDescriptor<unsigned int>);
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE

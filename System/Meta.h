@@ -1,4 +1,4 @@
-BEGIN_TE_SYSTEM_NAMESPACE
+_BEGIN_TE_SYSTEM_NAMESPACE
 
 template <bool,class,class>
 struct static_if_else;
@@ -16,4 +16,4 @@ struct static_if_else<false, IfTrue, IfFalse>
 };
 
 
-END_TE_SYSTEM_NAMESPACE
+_END_TE_SYSTEM_NAMESPACE

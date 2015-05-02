@@ -1,7 +1,7 @@
 #ifndef STRING_HELPER
 #define STRING_HELPER
 
-BEGIN_TE_SYSTEM_NAMESPACE
+_BEGIN_TE_SYSTEM_NAMESPACE
 
 namespace StringHelper{
 
@@ -10,6 +10,6 @@ namespace StringHelper{
 
 };
 
-END_TE_SYSTEM_NAMESPACE 
+_END_TE_SYSTEM_NAMESPACE 
 
 #endif//STRING_HELPER

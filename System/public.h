@@ -8,8 +8,8 @@
 
 
 
-#define BEGIN_TE_SYSTEM_NAMESPACE namespace TrustEngine{ namespace System{
-#define END_TE_SYSTEM_NAMESPACE }; };
+#define _BEGIN_TE_SYSTEM_NAMESPACE namespace TrustEngine{ namespace System{
+#define _END_TE_SYSTEM_NAMESPACE }; };
 
 #include "targetver.h"
 

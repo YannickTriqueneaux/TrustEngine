@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 class VectorDescriptorBase : public Descriptor{
 public:
@@ -45,4 +45,4 @@ template<typename T>
 std::string const VectorDescriptor<T>::descriptorName = ("VectorDescriptor<" + DescriptorHelper<T>::DescriptorType::getInstanceTypeName()).append(">");
 
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE

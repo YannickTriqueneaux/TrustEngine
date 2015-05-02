@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 
 Instance::Instance(void * instance, Descriptor const * descriptor): instance(instance),descriptor(descriptor){
@@ -13,4 +13,4 @@ Descriptor const * Instance::getType() const {
 	return descriptor;
 }
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE

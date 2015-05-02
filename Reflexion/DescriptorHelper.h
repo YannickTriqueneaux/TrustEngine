@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 
 template<typename Type>
@@ -68,6 +68,6 @@ struct DescriptorHelper<std::pair<T, U>> {
 
 
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE
 
 

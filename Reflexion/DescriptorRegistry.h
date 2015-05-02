@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 class DescriptorRegistry{
     typedef std::map<std::string, Descriptor*> DescriptorListType;
@@ -33,4 +33,4 @@ public:
 };
 
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE

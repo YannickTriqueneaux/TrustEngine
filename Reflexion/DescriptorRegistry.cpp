@@ -1,4 +1,4 @@
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 
 DescriptorRegistry::DescriptorRegistry(){
@@ -26,4 +26,4 @@ void DescriptorRegistry::printDescriptorList(){
 	});
 }
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE

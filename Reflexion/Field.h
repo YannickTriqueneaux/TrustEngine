@@ -1,5 +1,5 @@
 
-BEGIN_TE_REFLEXION_NAMESPACE
+_BEGIN_TE_REFLEXION_NAMESPACE
 
 class Instance;
 class Descriptor;
@@ -13,4 +13,4 @@ private:
     unsigned int offset;
 };
 
-END_TE_REFLEXION_NAMESPACE
+_END_TE_REFLEXION_NAMESPACE
