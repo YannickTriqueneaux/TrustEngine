@@ -80,6 +80,8 @@ DEFINE_CLASS_END
 
 void main(){
     using namespace MyNameSpace;
+    using namespace TrustEngine::System;
+
     std::string tl(stringize(heyyyeyed));
     getDescriptorOf<ParentClass>();
     getDescriptorOf<SuperClass>();
@@ -87,4 +89,6 @@ void main(){
     getDescriptorOf<TempClass<SuperClass>>();
     getDescriptorOf<TemplChild>();
     DescriptorRegistry::printDescriptorList();
+
+    Input::WaitKey();
 }

@@ -17,6 +17,7 @@
 #include <iostream>
 #include <cmath>
 #include <codecvt>
+#include <conio.h>
 //
 #include <combaseapi.h>
 //
@@ -26,5 +27,6 @@
 #include "VectorHelper.h"
 #include "StringHelper.h"
 #include "Guid.h"
+#include "Input.h"
 
 #endif
