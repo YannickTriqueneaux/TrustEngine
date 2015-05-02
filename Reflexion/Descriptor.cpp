@@ -1,6 +1,6 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 Descriptor::Descriptor(){
 }
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

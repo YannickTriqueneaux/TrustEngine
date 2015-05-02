@@ -1,7 +1,7 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 std::string const StringDescriptor::instanceTypeName = "string";
 
 std::string const StringDescriptor::descriptorName = _stringize(StringDescriptor);
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

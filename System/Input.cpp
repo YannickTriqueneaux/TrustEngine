@@ -1,9 +1,9 @@
 
-_BEGIN_TE_SYSTEM_NAMESPACE
+namespace TrustEngine{ namespace System{
 
 void Input::WaitKey(){
     std::cout << "Press any key to continue ...";
     _getch();
 }
 
-_END_TE_SYSTEM_NAMESPACE
+};};//TENS

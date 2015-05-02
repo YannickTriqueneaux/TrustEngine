@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 class Descriptor{
 	friend class DescriptorRegistry;
@@ -34,4 +34,4 @@ private:
 };
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

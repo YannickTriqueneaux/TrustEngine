@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 template<typename Type>
 class NativeDescriptor : public Descriptor{
@@ -217,4 +217,4 @@ public:
 };
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

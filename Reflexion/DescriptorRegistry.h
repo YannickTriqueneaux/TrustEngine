@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 class DescriptorRegistry{
     typedef std::map<std::string, Descriptor*> DescriptorListType;
@@ -33,4 +33,4 @@ public:
 };
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

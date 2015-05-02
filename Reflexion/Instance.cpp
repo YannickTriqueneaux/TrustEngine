@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 Instance::Instance(void * instance, Descriptor const * descriptor): instance(instance),descriptor(descriptor){
@@ -13,4 +13,4 @@ Descriptor const * Instance::getType() const {
 	return descriptor;
 }
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

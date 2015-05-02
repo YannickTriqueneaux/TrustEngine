@@ -1,7 +1,7 @@
 #ifndef STRING_HELPER
 #define STRING_HELPER
 
-_BEGIN_TE_SYSTEM_NAMESPACE
+namespace TrustEngine{ namespace System{
 
 namespace StringHelper{
 
@@ -10,6 +10,6 @@ namespace StringHelper{
 
 };
 
-_END_TE_SYSTEM_NAMESPACE 
+};};//TENS 
 
 #endif//STRING_HELPER

@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 DescriptorRegistry::DescriptorRegistry(){
@@ -26,4 +26,4 @@ void DescriptorRegistry::printDescriptorList(){
 	});
 }
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

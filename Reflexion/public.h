@@ -3,7 +3,7 @@
 
 
 #define _BEGIN_TE_REFLEXION_NAMESPACE namespace TrustEngine{ namespace Reflexion{
-#define _END_TE_REFLEXION_NAMESPACE }; };
+#define _END_TE_REFLEXION_NAMESPACE };};//TENS
 
 //dependencies
 

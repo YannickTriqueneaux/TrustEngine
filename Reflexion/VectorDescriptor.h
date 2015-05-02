@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 class VectorDescriptorBase : public Descriptor{
 public:
@@ -45,4 +45,4 @@ template<typename T>
 std::string const VectorDescriptor<T>::descriptorName = ("VectorDescriptor<" + DescriptorHelper<T>::DescriptorType::getInstanceTypeName()).append(">");
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

@@ -1,5 +1,5 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS
 
 

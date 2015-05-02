@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 class Instance{
 public:
@@ -18,4 +18,4 @@ template<typename T>
 inline Instance::Instance(T * instance) : instance((void*)instance), descriptor(getDescriptorOf<T>()){
 }
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

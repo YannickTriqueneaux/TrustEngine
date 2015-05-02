@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 template<typename Type>
@@ -68,6 +68,6 @@ struct DescriptorHelper<std::pair<T, U>> {
 
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS
 
 

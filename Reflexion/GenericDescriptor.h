@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 template<typename Type>
 class GenericDescriptor : public Descriptor{
@@ -48,4 +48,4 @@ void GenericDescriptor<Type>::addInferType(){
 }
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

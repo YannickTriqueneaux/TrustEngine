@@ -1,4 +1,4 @@
-_BEGIN_TE_SYSTEM_NAMESPACE
+namespace TrustEngine{ namespace System{
 
 template <bool,class,class>
 struct static_if_else;
@@ -16,4 +16,4 @@ struct static_if_else<false, IfTrue, IfFalse>
 };
 
 
-_END_TE_SYSTEM_NAMESPACE
+};};//TENS

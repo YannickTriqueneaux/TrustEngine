@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 class NO_PARENT_CLASS{
 public:
@@ -99,4 +99,4 @@ public:\
 
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 class MapDescriptorBase : public Descriptor{
@@ -52,4 +52,4 @@ template<typename FistValueType, typename SecondValueType>
 Descriptor const * MapDescriptor<FistValueType, SecondValueType>::pairDescriptor = nullptr;
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

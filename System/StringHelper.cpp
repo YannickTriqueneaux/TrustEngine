@@ -1,4 +1,4 @@
-_BEGIN_TE_SYSTEM_NAMESPACE
+namespace TrustEngine{ namespace System{
 
 namespace StringHelper{
 
@@ -20,4 +20,4 @@ namespace StringHelper{
 
 };
 
-_END_TE_SYSTEM_NAMESPACE
+};};//TENS

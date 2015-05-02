@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 Field::Field(int pOffset, Descriptor const * descriptor) : offset(pOffset), descriptor(descriptor){
@@ -10,4 +10,4 @@ Instance & Field::getInstance(Instance const & parent) const {
 }
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

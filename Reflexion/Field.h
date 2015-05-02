@@ -1,5 +1,5 @@
 
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 class Instance;
 class Descriptor;
@@ -13,4 +13,4 @@ private:
     unsigned int offset;
 };
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

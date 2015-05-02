@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 std::string const NativeDescriptor<bool>::descriptorName = _stringize(NativeDescriptor<bool>);
@@ -9,4 +9,4 @@ std::string const NativeDescriptor<float>::descriptorName = _stringize(NativeDes
 std::string const NativeDescriptor<double>::descriptorName = _stringize(NativeDescriptor<double>);
 std::string const NativeDescriptor<unsigned int>::descriptorName = _stringize(NativeDescriptor<unsigned int>);
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS

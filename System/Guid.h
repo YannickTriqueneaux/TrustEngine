@@ -1,4 +1,4 @@
-_BEGIN_TE_SYSTEM_NAMESPACE
+namespace TrustEngine{ namespace System{
 
 class Guid
 {
@@ -19,4 +19,4 @@ public:
     }
 };
 
-_END_TE_SYSTEM_NAMESPACE
+};};//TENS

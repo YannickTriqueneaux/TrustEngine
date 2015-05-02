@@ -1,4 +1,4 @@
-_BEGIN_TE_REFLEXION_NAMESPACE
+namespace TrustEngine{ namespace Reflexion{
 
 
 class StringDescriptor : public Descriptor{
@@ -31,4 +31,4 @@ public:
 };
 
 
-_END_TE_REFLEXION_NAMESPACE
+};};//TENS
