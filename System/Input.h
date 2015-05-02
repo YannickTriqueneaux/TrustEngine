@@ -3,17 +3,14 @@
 #ifndef SYSTEM_INPUT
 #define SYSTEM_INPUT
 
-namespace TrustEngine{
-
-    namespace System{
+BEGIN_TE_SYSTEM_NAMESPACE
 
         struct Input
         {
             static void WaitKey();
         };
 
-    };
-};
+END_TE_SYSTEM_NAMESPACE
 
 
 #endif//SYSTEM_INPUT

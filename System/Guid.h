@@ -1,4 +1,4 @@
-
+BEGIN_TE_SYSTEM_NAMESPACE
 
 class Guid
 {
@@ -19,3 +19,4 @@ public:
     }
 };
 
+END_TE_SYSTEM_NAMESPACE

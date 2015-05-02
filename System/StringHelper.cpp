@@ -1,3 +1,4 @@
+BEGIN_TE_SYSTEM_NAMESPACE
 
 namespace StringHelper{
 
@@ -18,3 +19,5 @@ namespace StringHelper{
     }
 
 };
+
+END_TE_SYSTEM_NAMESPACE

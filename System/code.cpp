@@ -1,6 +1,6 @@
 
 //headers
-#include "public.h"
+#include "private.h"
 
 
 //sources

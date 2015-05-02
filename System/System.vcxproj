@@ -51,7 +51,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderFile>public.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>private.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -85,6 +85,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="Meta.h" />
+    <ClInclude Include="private.h" />
     <ClInclude Include="public.h" />
     <ClInclude Include="StringHelper.h" />
     <ClInclude Include="targetver.h" />

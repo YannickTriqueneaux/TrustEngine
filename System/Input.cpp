@@ -1,12 +1,9 @@
 
-namespace TrustEngine{
+BEGIN_TE_SYSTEM_NAMESPACE
 
-    namespace System{
+void Input::WaitKey(){
+    std::cout << "Press any key to continue ...";
+    _getch();
+}
 
-            void Input::WaitKey(){
-                std::cout << "Press any key to continue ...";
-                _getch();
-            }
-
-    };
-};
+END_TE_SYSTEM_NAMESPACE

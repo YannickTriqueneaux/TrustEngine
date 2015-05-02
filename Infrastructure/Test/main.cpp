@@ -17,6 +17,8 @@ DEFINE_CLASS_END
 
 void main(){
 	using namespace MyNameSpace;
+    using TrustEngine::System::Guid;
+
 	ParentClass test;
 	auto descriptor = test.getDescriptor();
 

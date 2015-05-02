@@ -6,6 +6,11 @@
 #ifndef SYSTEM_PUBLIC
 #define SYSTEM_PUBLIC
 
+
+
+#define BEGIN_TE_SYSTEM_NAMESPACE namespace TrustEngine{ namespace System{
+#define END_TE_SYSTEM_NAMESPACE }; };
+
 #include "targetver.h"
 
 
@@ -28,5 +33,7 @@
 #include "StringHelper.h"
 #include "Guid.h"
 #include "Input.h"
+
+
 
 #endif
