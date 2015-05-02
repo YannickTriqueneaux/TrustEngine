@@ -20,10 +20,40 @@
     <ClInclude Include="private.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Serializer.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Page.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Value.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Array.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Serializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Value.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="code.cpp">
-      <Filter>Header</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

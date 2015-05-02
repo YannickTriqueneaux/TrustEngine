@@ -6,8 +6,12 @@
 #define _END_TE_SERIALIZATION_NAMESPACE };};//TENS
 
 //dependencies
-#include "..\Serialization\public.h"
+#include "..\Reflexion\public.h"
 
 //include
+#include "Value.h"
+#include "Array.h"
+#include "Object.h"
+#include "Page.h"
 
 #endif
