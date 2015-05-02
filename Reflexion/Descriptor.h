@@ -1,4 +1,4 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 class Descriptor{
 	friend class DescriptorRegistry;
@@ -32,3 +32,6 @@ public:
 private:
     std::map<std::string, Field> fields;
 };
+
+
+END_TE_REFLEXION_NAMESPACE

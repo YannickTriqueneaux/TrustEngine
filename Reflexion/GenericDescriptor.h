@@ -1,4 +1,4 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 template<typename Type>
 class GenericDescriptor : public Descriptor{
@@ -46,3 +46,6 @@ void GenericDescriptor<Type>::addInferType(){
         inferDescriptors << inferDescriptor;
     }
 }
+
+
+END_TE_REFLEXION_NAMESPACE

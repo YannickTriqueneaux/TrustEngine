@@ -1,4 +1,4 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 class Instance{
 public:
@@ -17,3 +17,5 @@ private:
 template<typename T>
 inline Instance::Instance(T * instance) : instance((void*)instance), descriptor(getDescriptorOf<T>()){
 }
+
+END_TE_REFLEXION_NAMESPACE

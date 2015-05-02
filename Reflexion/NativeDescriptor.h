@@ -1,4 +1,4 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 template<typename Type>
 class NativeDescriptor : public Descriptor{
@@ -10,7 +10,7 @@ class NativeDescriptor<bool> : public Descriptor{
 	NativeDescriptor(){}
 public:
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(bool));
+        static std::string const instanceTypeName(_stringize(bool));
 		return instanceTypeName;
 	}
 	typedef NativeDescriptor<bool> SelfType;
@@ -39,7 +39,7 @@ class NativeDescriptor<int> : public Descriptor{
 	NativeDescriptor(){}
 public:
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(int));
+        static std::string const instanceTypeName(_stringize(int));
 		return instanceTypeName;
 	}
 	typedef NativeDescriptor<int> SelfType;
@@ -74,7 +74,7 @@ public:
 		return descriptorName;
 	}
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(short));
+        static std::string const instanceTypeName(_stringize(short));
 		return instanceTypeName;
 	}
 	static Descriptor const * getDescriptorInstance(){
@@ -105,7 +105,7 @@ public:
 		return descriptorName;
 	}
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(long));
+        static std::string const instanceTypeName(_stringize(long));
 		return instanceTypeName;
 	}
 	static Descriptor const * getDescriptorInstance(){
@@ -136,7 +136,7 @@ public:
 		return descriptorName;
 	}
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(float));
+        static std::string const instanceTypeName(_stringize(float));
 		return instanceTypeName;
 	}
 	static Descriptor const * getDescriptorInstance(){
@@ -167,7 +167,7 @@ public:
 		return descriptorName;
 	}
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(double));
+        static std::string const instanceTypeName(_stringize(double));
 		return instanceTypeName;
 	}
 	static Descriptor const * getDescriptorInstance(){
@@ -198,7 +198,7 @@ public:
 		return descriptorName;
 	}
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(unsigned int));
+        static std::string const instanceTypeName(_stringize(unsigned int));
 		return instanceTypeName;
 	}
 	static Descriptor const * getDescriptorInstance(){
@@ -215,3 +215,6 @@ public:
 		return descriptor;
 	}
 };
+
+
+END_TE_REFLEXION_NAMESPACE

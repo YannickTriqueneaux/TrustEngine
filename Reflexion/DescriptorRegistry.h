@@ -1,4 +1,4 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 class DescriptorRegistry{
     typedef std::map<std::string, Descriptor*> DescriptorListType;
@@ -31,3 +31,6 @@ public:
 
 	static void printDescriptorList();
 };
+
+
+END_TE_REFLEXION_NAMESPACE

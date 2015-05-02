@@ -1,3 +1,6 @@
+BEGIN_TE_REFLEXION_NAMESPACE
+
+
 DescriptorRegistry::DescriptorRegistry(){
 }
 DescriptorRegistry & DescriptorRegistry::getInstance(){
@@ -22,3 +25,5 @@ void DescriptorRegistry::printDescriptorList(){
         std::cout << ite.first << std::endl;
 	});
 }
+
+END_TE_REFLEXION_NAMESPACE

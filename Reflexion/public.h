@@ -1,6 +1,10 @@
 #ifndef REFLEXION_PUBLIC
 #define REFLEXION_PUBLIC
 
+
+#define BEGIN_TE_REFLEXION_NAMESPACE namespace TrustEngine{ namespace Reflexion{
+#define END_TE_REFLEXION_NAMESPACE }; };
+
 //dependencies
 
 #include "..\System\public.h"

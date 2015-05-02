@@ -1,4 +1,4 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 class PairDescriptorBase : public Descriptor{
 public:
@@ -49,3 +49,6 @@ template<typename FistValueType, typename SecondValueType>
 Descriptor const * PairDescriptor<FistValueType, SecondValueType>::firstDescriptor = nullptr;
 template<typename FistValueType, typename SecondValueType>
 Descriptor const * PairDescriptor<FistValueType, SecondValueType>::secondDescriptor = nullptr;
+
+
+END_TE_REFLEXION_NAMESPACE

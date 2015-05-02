@@ -1,2 +1,2 @@
 
-#define stringize(x) #x
+#define _stringize(x) #x

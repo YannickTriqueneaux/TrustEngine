@@ -1,4 +1,6 @@
 
+BEGIN_TE_REFLEXION_NAMESPACE
+
 class Instance;
 class Descriptor;
 class Field{
@@ -10,3 +12,5 @@ private:
     Descriptor const * descriptor;
     unsigned int offset;
 };
+
+END_TE_REFLEXION_NAMESPACE

@@ -1,3 +1,5 @@
+BEGIN_TE_REFLEXION_NAMESPACE
+
 
 class MapDescriptorBase : public Descriptor{
 public:
@@ -48,3 +50,6 @@ public:
 
 template<typename FistValueType, typename SecondValueType>
 Descriptor const * MapDescriptor<FistValueType, SecondValueType>::pairDescriptor = nullptr;
+
+
+END_TE_REFLEXION_NAMESPACE

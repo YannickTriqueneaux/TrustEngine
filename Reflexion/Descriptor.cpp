@@ -1,5 +1,6 @@
-
+BEGIN_TE_REFLEXION_NAMESPACE
 
 Descriptor::Descriptor(){
 }
 
+END_TE_REFLEXION_NAMESPACE

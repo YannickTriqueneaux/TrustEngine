@@ -16,7 +16,8 @@ DEFINE_CLASS_BEGIN(MyNameSpace::ParentClass)
 DEFINE_CLASS_END
 
 void main(){
-	using namespace MyNameSpace;
+    using namespace MyNameSpace;
+    using namespace TrustEngine::Reflexion;
     using TrustEngine::System::Guid;
 
 	ParentClass test;

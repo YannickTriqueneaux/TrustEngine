@@ -1,11 +1,14 @@
+BEGIN_TE_REFLEXION_NAMESPACE
+
+
 template<typename Type>
 Descriptor const * getDescriptorOf(Type const &){
 	return DescriptorHelper<Type>::DescriptorType::getDescriptorInstance();
 }
-template<typename Type>
-Descriptor const * getDescriptorOf(Type const &&){
-	return DescriptorHelper<Type>::DescriptorType::getDescriptorInstance();
-}
+//template<typename Type>
+//Descriptor const * getDescriptorOf(Type const &&){
+//	return DescriptorHelper<Type>::DescriptorType::getDescriptorInstance();
+//}
 template<typename Type>
 Descriptor const * getDescriptorOf(){
 	return DescriptorHelper<Type>::DescriptorType::getDescriptorInstance();
@@ -65,6 +68,6 @@ struct DescriptorHelper<std::pair<T, U>> {
 
 
 
-
+END_TE_REFLEXION_NAMESPACE
 
 

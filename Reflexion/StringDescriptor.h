@@ -1,3 +1,5 @@
+BEGIN_TE_REFLEXION_NAMESPACE
+
 
 class StringDescriptor : public Descriptor{
     static std::string const descriptorName;
@@ -11,7 +13,7 @@ public:
 		return descriptorName;
 	}
     static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(stringize(std::string));
+        static std::string const instanceTypeName(_stringize(std::string));
 		return instanceTypeName;
 	}
 	static Descriptor const * getDescriptorInstance(){
@@ -27,3 +29,6 @@ public:
 		return descriptor;
 	}
 };
+
+
+END_TE_REFLEXION_NAMESPACE

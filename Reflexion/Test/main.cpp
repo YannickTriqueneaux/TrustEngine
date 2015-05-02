@@ -81,8 +81,9 @@ DEFINE_CLASS_END
 void main(){
     using namespace MyNameSpace;
     using namespace TrustEngine::System;
+    using namespace TrustEngine::Reflexion;
 
-    std::string tl(stringize(heyyyeyed));
+    std::string tl(_stringize(heyyyeyed));
     getDescriptorOf<ParentClass>();
     getDescriptorOf<SuperClass>();
     getDescriptorOf<ChildClass>();
