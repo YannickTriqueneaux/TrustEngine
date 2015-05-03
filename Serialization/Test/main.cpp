@@ -107,5 +107,5 @@ void main(){
     serializer.serialize(stream);
     std::cout << stream.str();
 
-    Input::WaitKey();
+    Input::_waitKey();
 }

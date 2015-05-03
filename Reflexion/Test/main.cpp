@@ -207,12 +207,12 @@ void testFieldInstanceNavigation(){
 void main(){
 
     testDescritporGetting();
-    Input::WaitKey();
+    Input::_waitKey();
 
 
     testFieldInstanceGetting();
-    Input::WaitKey();
+    Input::_waitKey();
 
     testFieldInstanceNavigation();
-    Input::WaitKey();
+    Input::_waitKey();
 }

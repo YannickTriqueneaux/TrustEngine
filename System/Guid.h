@@ -3,7 +3,7 @@ namespace TrustEngine{ namespace System{
 class Guid
 {
 public:
-    static std::string generate(){
+    static std::string _generate(){
         GUID gidReference;
         HRESULT hCreateGuid = ::CoCreateGuid(&gidReference);
 

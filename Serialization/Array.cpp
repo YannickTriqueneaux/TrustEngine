@@ -13,18 +13,18 @@ namespace TrustEngine{ namespace Serialization{
             streamResult << '"' << name << '"' << ": ";
         }
         streamResult << "[" << std::endl;
-        streamResult << Tab::put(indentRange + 1);
+        streamResult << Tab::_put(indentRange + 1);
 
         ContentType::size_type cpt = 0;
         std::for_each(content.begin(), content.end(), [&](ContentType::value_type const & ite){
             ite->print(streamResult);
             if (cpt++ < content.size()){
                 streamResult << ',' << std::endl;
-                streamResult << Tab::put(indentRange + 1);
+                streamResult << Tab::_put(indentRange + 1);
             }
         });
 
-        streamResult << Tab::put(indentRange) << ']';
+        streamResult << Tab::_put(indentRange) << ']';
         return true;
     }
 

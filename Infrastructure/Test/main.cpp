@@ -25,5 +25,5 @@ void main(){
 
     DescriptorRegistry::_printDescriptorList();
 
-    Guid::generate();
+    Guid::_generate();
 }

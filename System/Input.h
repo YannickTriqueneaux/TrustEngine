@@ -7,7 +7,7 @@ namespace TrustEngine{ namespace System{
 
         struct Input
         {
-            static void WaitKey();
+            static void _waitKey();
         };
 
 };};//TENS
