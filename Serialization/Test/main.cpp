@@ -103,7 +103,9 @@ void main(){
     ParentClass parent;
     Instance instance(&parent);
     InstanceSerializer<Formats::JSON> serializer(instance);
-    serializer.serialize();
+    std::stringstream stream;
+    serializer.serialize(stream);
+    std::cout << stream.str();
 
     Input::WaitKey();
 }

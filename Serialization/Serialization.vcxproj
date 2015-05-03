@@ -91,6 +91,7 @@
   <ItemGroup>
     <ClInclude Include="Array.h" />
     <ClInclude Include="Formats.h" />
+    <ClInclude Include="InstanceParser.h" />
     <ClInclude Include="Stringizer.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Page.h" />
@@ -104,6 +105,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="code.cpp" />
+    <ClCompile Include="InstanceParser.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Stringizer.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>

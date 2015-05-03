@@ -41,6 +41,9 @@
     <ClInclude Include="Stringizer.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="InstanceParser.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Page.cpp">
@@ -68,6 +71,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Stringizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

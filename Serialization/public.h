@@ -18,6 +18,7 @@ class Value;
 #include "Page.h"
 #include "Value.h"
 
+#include "InstanceParser.h"
 #include "InstanceSerializer.h"
 
 

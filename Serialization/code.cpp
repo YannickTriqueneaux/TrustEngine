@@ -8,6 +8,7 @@
 #include "Array.cpp"
 #include "Page.cpp"
 
+#include "InstanceParser.cpp"
 #include "InstanceSerializer.cpp"
 
 namespace TrustEngine{ namespace Serialization{
