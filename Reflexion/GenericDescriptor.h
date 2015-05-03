@@ -11,9 +11,15 @@ class GenericDescriptor : public Descriptor{
 	Descriptor const * parentClassDescriptor;
     std::vector<Descriptor const*> inferDescriptors;
 public:
+    virtual std::string const & getName() const {
+        return getDescriptorName();
+    }
     static std::string const & getInstanceTypeName(){
 		return Type::getClassName();
-	}
+    }
+    virtual std::string const & getInstanceTypename() const {
+        return getInstanceTypeName();
+    }
 	static bool isTemplateClass(){
 		return Type::isTemplateClass;
 	}
@@ -32,6 +38,9 @@ public:
 	virtual Descriptor const * getParentClassDescriptor() const {
 		return parentClassDescriptor;
 	}
+    virtual bool isAGeneric() const {
+        return true;
+    }
 };
 
 

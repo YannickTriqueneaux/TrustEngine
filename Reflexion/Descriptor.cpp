@@ -29,6 +29,14 @@ Descriptor const * Descriptor::getDescriptorInstance(){
 void Descriptor::setParentClassDescriptor(Descriptor const * parentClassDescriptor){ 
     assert(0); 
 }
+std::string const & Descriptor::getName() const {
+    assert(0);
+    return System::StringHelper::EmptyString;
+}
+std::string const & Descriptor::getInstanceTypename() const {
+    assert(0);
+    return System::StringHelper::EmptyString;
+}
 
 Descriptor const * Descriptor::getParentClassDescriptor() const { 
     return nullptr; 
@@ -38,9 +46,12 @@ bool Descriptor::isStringizable() const {
     return false; 
 };
 
+bool Descriptor::isAnArray() const{
+    return false;
+}
 
-void Descriptor::stringize(std::ostream & streamResult, Instance const &) const {
-    assert(isStringizable() && "This type is not serializable");
+bool Descriptor::isAGeneric() const{
+    return false;
 }
 
 

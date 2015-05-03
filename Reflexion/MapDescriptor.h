@@ -1,7 +1,7 @@
 namespace TrustEngine{ namespace Reflexion{
 
 
-class MapDescriptorBase : public Descriptor{
+class MapDescriptorBase : public ArrayDescriptor{
 public:
 };
 
@@ -26,12 +26,18 @@ public:
 			.append(DescriptorHelper<FistValueType>::DescriptorType::getInstanceTypeName()).append(",")
 			.append(DescriptorHelper<SecondValueType>::DescriptorType::getInstanceTypeName()).append(">"));
 		return descriptorName;
-	}
+    }
+    virtual std::string const & getName() const {
+        return getDescriptorName();
+    }
     static std::string const & getInstanceTypeName(){
         static std::string const instanceTypeName(std::string("Map<").append(DescriptorHelper<FistValueType>::DescriptorType::getInstanceTypeName()).append(",")
 			.append(DescriptorHelper<SecondValueType>::DescriptorType::getInstanceTypeName()).append(">"));
 		return instanceTypeName;
-	}
+    }
+    virtual std::string const & getInstanceTypename() const {
+        return getInstanceTypeName();
+    }
 	static Descriptor const * getDescriptorInstance(){
 		static Descriptor const * descriptor;
 		if (descriptor){

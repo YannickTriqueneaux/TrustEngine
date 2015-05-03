@@ -41,7 +41,7 @@ namespace TrustEngine{ namespace Serialization{
     public:
         virtual bool print(std::ostream & streamResult) const ;
 
-        Object<FORMAT> content;
+        Object<FORMAT> * content;
     };
 
 

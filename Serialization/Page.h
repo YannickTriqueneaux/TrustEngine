@@ -5,13 +5,14 @@ namespace TrustEngine{ namespace Serialization{
 
     /**
     * A page is the main object returned by InstanceSerializer::serialize()
-    * Represents the two main '{' and '}'
-    * and contains an array of Values
+    * contains an array of Values
     * @param FORMAT is the page serialization format
     */
     template<typename FORMAT>
     class Page{
     public:
+        typedef Value<FORMAT>* ContentType;
+
         Page();
         /**
         *   print the page content into the given ostream instance
@@ -20,8 +21,14 @@ namespace TrustEngine{ namespace Serialization{
         */
         bool print(std::ostream & streamResult) const ;
 
+        void setContent(ContentType newContent){
+            content = newContent;
+        };
+        ContentType getContent(){
+            return content;
+        }
     private:
-        Object<FORMAT> content;
+        ContentType content = nullptr;
     };
 
 };};//TENS

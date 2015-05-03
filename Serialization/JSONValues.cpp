@@ -10,7 +10,7 @@ namespace TrustEngine{ namespace Serialization{
 
     template<>
     bool ObjectValue< JSON >::print(std::ostream & streamResult) const {
-        return content.print(streamResult);
+        return content->print(streamResult);
     }
 
     template<>

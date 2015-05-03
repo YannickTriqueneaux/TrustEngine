@@ -5,11 +5,11 @@ namespace TrustEngine{ namespace Serialization{
     using Formats::JSON;
 
     template<typename FORMAT>
-    Page<FORMAT>::Page() :content("",1){}
+    Page<FORMAT>::Page(){}
 
     bool Page<JSON>::print(std::ostream & streamResult) const {
-        content.print(streamResult);
-        return false;
+        assert(content && "Page::print empty page");
+        return content->print(streamResult);
     }
 
 

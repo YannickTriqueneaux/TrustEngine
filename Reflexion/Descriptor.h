@@ -29,6 +29,21 @@ public:
         return &(pair->second);;
     }
 
+    template<typename Type>
+    bool isA(){
+        auto compareDescriptor = getDescriptorOf<Type>();
+        if (compareDescriptor == this){
+            return true;
+        }
+        else{//maybe in inherit class.  Recursive search
+            auto parentDesc = getParentClassDescriptor();
+            if (parentDesc){
+                return parentDesc->isA<Type>();
+            }
+        }
+        return false;
+    }
+
     /**
     * find the Field by the given name
     * @param field name
@@ -47,9 +62,12 @@ public:
     static Descriptor const * getDescriptorInstance();
     virtual void setParentClassDescriptor(Descriptor const * parentClassDescriptor);
     virtual Descriptor const * getParentClassDescriptor() const ;
-    virtual bool isStringizable() const ;
-    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 
+    virtual std::string const & getName() const ;
+    virtual std::string const & getInstanceTypename() const;
+    virtual bool isStringizable() const ;
+    virtual bool isAnArray() const ;
+    virtual bool isAGeneric() const ;
 private:
     std::map<std::string, Field> fields;
     std::map<std::string, Descriptor const *> descriptorField;

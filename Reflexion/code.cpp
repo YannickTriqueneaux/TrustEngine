@@ -14,3 +14,4 @@
 #include "VectorDescriptor.cpp"
 #include "PairDescriptor.cpp"
 #include "MapDescriptor.cpp"
+#include "ArrayDescriptor.cpp"

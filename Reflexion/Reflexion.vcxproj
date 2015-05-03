@@ -95,8 +95,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayDescriptor.h" />
     <ClInclude Include="MapDescriptor.h" />
     <ClInclude Include="PairDescriptor.h" />
+    <ClInclude Include="StringizableDescriptor.h" />
     <ClInclude Include="VectorDescriptor.h" />
     <ClInclude Include="Descriptor.h" />
     <ClInclude Include="DescriptorHelper.h" />
@@ -112,6 +114,9 @@
     <ClInclude Include="StringDescriptor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayDescriptor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="code.cpp" />
     <ClCompile Include="GenericDescriptor.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>

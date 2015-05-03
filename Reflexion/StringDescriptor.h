@@ -1,9 +1,8 @@
 namespace TrustEngine{ namespace Reflexion{
 
 
-class StringDescriptor : public Descriptor{
+class StringDescriptor : public StringizableDescriptor{
     static std::string const descriptorName;
-    static std::string const instanceTypeName;
 	friend class DescriptorRegistry;
 	StringDescriptor(){}
 public:
@@ -11,11 +10,17 @@ public:
     typedef std::string InstanceType;
     static std::string const & getDescriptorName(){
 		return descriptorName;
-	}
+    }
+    virtual std::string const & getName() const {
+        return getDescriptorName();
+    }
     static std::string const & getInstanceTypeName(){
         static std::string const instanceTypeName(_stringize(std::string));
 		return instanceTypeName;
-	}
+    }
+    virtual std::string const & getInstanceTypename() const {
+        return getInstanceTypeName();
+    }
 	static Descriptor const * getDescriptorInstance(){
 		static Descriptor const * descriptor;
 		if(descriptor){

@@ -1,6 +1,6 @@
 namespace TrustEngine{ namespace Reflexion{
 
-class PairDescriptorBase : public Descriptor{
+class PairDescriptorBase : public ArrayDescriptor{
 public:
 };
 
@@ -22,7 +22,13 @@ public:
 			.append(DescriptorHelper<FistValueType>::DescriptorType::getInstanceTypeName()).append(",")
 			.append(DescriptorHelper<SecondValueType>::DescriptorType::getInstanceTypeName()).append(">"));
 		 return descriptorName;
-	}
+    }
+    virtual std::string const & getName() const {
+        return getDescriptorName();
+    }
+    virtual std::string const & getInstanceTypename() const {
+        return getInstanceTypeName();
+    }
     static std::string const & getInstanceTypeName(){
         static std::string const instanceTypeName(std::string("Pair<").append(DescriptorHelper<FistValueType>::DescriptorType::getInstanceTypeName()).append(",")
 			.append(DescriptorHelper<SecondValueType>::DescriptorType::getInstanceTypeName()).append(">"));

@@ -12,6 +12,8 @@
 //include
 #include "Field.h"
 #include "Descriptor.h"
+#include "ArrayDescriptor.h"
+#include "StringizableDescriptor.h"
 #include "DescriptorRegistry.h"
 #include "GenericDescriptor.h"
 #include "NativeDescriptor.h"

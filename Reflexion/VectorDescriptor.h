@@ -1,6 +1,6 @@
 namespace TrustEngine{ namespace Reflexion{
 
-class VectorDescriptorBase : public Descriptor{
+class VectorDescriptorBase : public ArrayDescriptor{
 public:
 };
 
@@ -18,7 +18,10 @@ class VectorDescriptor : public VectorDescriptorBase{
 public:
     static std::string const & getDescriptorName(){
 		return descriptorName;
-	}
+    }
+    virtual std::string const & getName() const {
+        return getDescriptorName();
+    }
     static std::string const & getInstanceTypeName(){
         static std::string const instanceTypeName(std::string("Vector<").append(DescriptorHelper<T>::DescriptorType::getInstanceTypeName()).append(">"));
 		return instanceTypeName;
