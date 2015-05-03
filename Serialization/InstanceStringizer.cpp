@@ -5,8 +5,12 @@ namespace TrustEngine{
 
         using Reflexion::Instance;
 
-        std::string InstanceStringizer::instanceToString(Instance const & instance){
-            return "str";
+        bool InstanceStringizer::instanceToString(std::ostream & streamResult, Instance const & instance){
+            if (!instance.isEmpty()
+                && instance.getType()->isStringizable()){
+                streamResult << instance.getType()->stringize(instance);
+            }
+            return false;
         }
 
     };

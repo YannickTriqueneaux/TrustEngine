@@ -42,10 +42,13 @@ public:
     bool containsField(Field const & field) const ;
     bool containsField(std::string const & fieldname) const ;
 
-	static Descriptor const * getDescriptorInstance(){assert(0);return nullptr;}
-	virtual void setParentClassDescriptor(Descriptor const * parentClassDescriptor){assert(0);}
-	virtual Descriptor const * getParentClassDescriptor() const {return nullptr;}
 
+    
+    static Descriptor const * getDescriptorInstance();
+    virtual void setParentClassDescriptor(Descriptor const * parentClassDescriptor);
+    virtual Descriptor const * getParentClassDescriptor() const ;
+    virtual bool isStringizable() const ;
+    virtual std::string stringize(Instance const & instance) const ;
 
 private:
     std::map<std::string, Field> fields;

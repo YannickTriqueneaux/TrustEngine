@@ -21,4 +21,28 @@ bool Descriptor::containsField(std::string const & fieldname) const {
     return !!getField(fieldname);
 }
 
+
+Descriptor const * Descriptor::getDescriptorInstance(){ 
+    assert(0); return nullptr; 
+}
+
+void Descriptor::setParentClassDescriptor(Descriptor const * parentClassDescriptor){ 
+    assert(0); 
+}
+
+Descriptor const * Descriptor::getParentClassDescriptor() const { 
+    return nullptr; 
+}
+
+bool Descriptor::isStringizable() const { 
+    return false; 
+};
+
+
+std::string Descriptor::stringize(Instance const &) const {
+    assert(isStringizable() && "This type is not serializable");
+    return System::StringHelper::EmptyString;
+}
+
+
 };};//TENS
