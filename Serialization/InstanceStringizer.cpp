@@ -8,7 +8,7 @@ namespace TrustEngine{
         bool InstanceStringizer::instanceToString(std::ostream & streamResult, Instance const & instance){
             if (!instance.isEmpty()
                 && instance.getType()->isStringizable()){
-                streamResult << instance.getType()->stringize(instance);
+                instance.getType()->stringize(streamResult, instance);
             }
             return false;
         }

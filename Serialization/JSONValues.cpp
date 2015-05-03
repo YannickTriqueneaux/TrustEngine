@@ -34,7 +34,7 @@ namespace TrustEngine{ namespace Serialization{
     template<>
     bool StringValue<JSON>::print(std::ostream & streamResult){
         streamResult << '"';
-        streamResult << InstanceStringizer::instanceToString(content);
+        InstanceStringizer::instanceToString(streamResult, content);
         streamResult << '"';
         return true;
     }

@@ -48,7 +48,7 @@ public:
     virtual void setParentClassDescriptor(Descriptor const * parentClassDescriptor);
     virtual Descriptor const * getParentClassDescriptor() const ;
     virtual bool isStringizable() const ;
-    virtual std::string stringize(Instance const & instance) const ;
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 
 private:
     std::map<std::string, Field> fields;

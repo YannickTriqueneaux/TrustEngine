@@ -2,6 +2,9 @@ namespace TrustEngine{ namespace Reflexion{
 
 template<typename Type>
 class NativeDescriptor : public Descriptor{
+    virtual bool isStringizable() const {
+        return true;
+    };
 };
 template<>
 class NativeDescriptor<bool> : public Descriptor{
@@ -31,6 +34,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 template<>
 class NativeDescriptor<int> : public Descriptor{
@@ -60,6 +64,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 template<>
@@ -90,6 +95,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 template<>
@@ -121,6 +127,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 template<>
@@ -152,6 +159,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 template<>
@@ -183,6 +191,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 template<>
@@ -214,6 +223,7 @@ public:
 		descriptor = newDescriptor;
 		return descriptor;
 	}
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 

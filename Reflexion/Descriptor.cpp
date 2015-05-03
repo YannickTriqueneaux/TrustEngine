@@ -39,9 +39,8 @@ bool Descriptor::isStringizable() const {
 };
 
 
-std::string Descriptor::stringize(Instance const &) const {
+void Descriptor::stringize(std::ostream & streamResult, Instance const &) const {
     assert(isStringizable() && "This type is not serializable");
-    return System::StringHelper::EmptyString;
 }
 
 
