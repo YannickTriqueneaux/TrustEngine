@@ -9,9 +9,22 @@
 #include "..\Reflexion\public.h"
 
 //include
-#include "Value.h"
-#include "Array.h"
+#include "InstanceStringizer.h"
+
+
+template<typename FORMAT>
+class Value;
+
+#include "Formats.h"
 #include "Object.h"
+#include "Array.h"
 #include "Page.h"
+#include "Value.h"
+
+
+//supported formats
+//Formats::JSON
+
+
 
 #endif

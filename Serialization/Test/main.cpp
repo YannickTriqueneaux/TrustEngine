@@ -98,5 +98,11 @@ using namespace TrustEngine::Reflexion;
 
 
 void main(){
+    std::ostringstream stream;
 
+    stream << "hey ho !" << 545451 << 'D' << std::endl << "Okok" << StringHelper::Tab::put(4) << "tab";
+    std::cout << stream.str();
+
+
+    Input::WaitKey();
 }

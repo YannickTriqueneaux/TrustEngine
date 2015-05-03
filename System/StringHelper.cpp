@@ -18,6 +18,18 @@ namespace StringHelper{
         return std::move(converterX.to_bytes(wstr));
     }
 
+    //Tabulation
+    const int Tab::NB_SPACE_BY_TAB = 4;
+    std::string Tab::put(int nbTab){
+        std::string result;
+        auto nbSpace = nbTab * NB_SPACE_BY_TAB;
+        result.reserve(nbSpace);
+        result.resize(nbSpace);
+        for (auto i = 0; i < nbSpace; ++i){
+            result[i] = ' ';
+        }
+        return std::move(result);
+    }
 };
 
 };};//TENS

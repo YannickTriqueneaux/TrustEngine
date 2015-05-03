@@ -35,6 +35,12 @@
     <ClInclude Include="Array.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Formats.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="InstanceStringizer.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Serializer.cpp">
@@ -53,6 +59,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONValues.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InstanceStringizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
