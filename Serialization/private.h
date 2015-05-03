@@ -5,5 +5,6 @@
 #include "public.h"
 
 //includes
+#include "Stringizer.h"
 
 #endif

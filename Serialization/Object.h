@@ -3,11 +3,13 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class Object{
     public:
-        Object(int indentrange);
+        Object(std::string const & objectname, int indentrange);
 
-        bool print(std::ostream & streamResult);
+        bool print(std::ostream & streamResult) const ;
     private:
         int indentRange = 0;
-        std::map<std::string,Value<FORMAT>> content;
+        std::string name;
+        typedef std::map<std::string, Value<FORMAT> const *> ContentType;
+        ContentType content;
     };
 };};//TENS

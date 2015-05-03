@@ -20,9 +20,6 @@
     <ClInclude Include="private.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Serializer.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Page.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -38,14 +35,14 @@
     <ClInclude Include="Formats.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="InstanceStringizer.h">
+    <ClInclude Include="InstanceSerializer.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Stringizer.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Serializer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Page.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -67,7 +64,10 @@
     <ClCompile Include="JSONValues.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InstanceStringizer.cpp">
+    <ClCompile Include="InstanceSerializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stringizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

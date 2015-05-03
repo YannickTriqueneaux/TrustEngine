@@ -91,12 +91,12 @@
   <ItemGroup>
     <ClInclude Include="Array.h" />
     <ClInclude Include="Formats.h" />
-    <ClInclude Include="InstanceStringizer.h" />
+    <ClInclude Include="Stringizer.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Page.h" />
     <ClInclude Include="private.h" />
     <ClInclude Include="public.h" />
-    <ClInclude Include="Serializer.h" />
+    <ClInclude Include="InstanceSerializer.h" />
     <ClInclude Include="Value.h" />
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +104,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="code.cpp" />
-    <ClCompile Include="InstanceStringizer.cpp" />
+    <ClCompile Include="Stringizer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="NumberValue.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -114,7 +116,7 @@
     <ClCompile Include="Page.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Serializer.cpp">
+    <ClCompile Include="InstanceSerializer.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="JSONValues.cpp">

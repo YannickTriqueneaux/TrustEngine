@@ -94,6 +94,9 @@
     <ProjectReference Include="..\..\Reflexion\Reflexion.vcxproj">
       <Project>{46fd1be6-2e96-48c0-9766-0d6726f5e42b}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\Serialization\Serialization.vcxproj">
+      <Project>{f1208f0b-ec52-4264-aaf9-bf0c4c9d0d36}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\System\System.vcxproj">
       <Project>{454af73c-2970-4295-beeb-19f97e513c03}</Project>
     </ProjectReference>

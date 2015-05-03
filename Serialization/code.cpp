@@ -8,6 +8,8 @@
 #include "Array.cpp"
 #include "Page.cpp"
 
+#include "InstanceSerializer.cpp"
+
 namespace TrustEngine{ namespace Serialization{
     namespace PreCompiling{
         Page < Formats::JSON > jsonpage;

@@ -4,7 +4,7 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class Value{
     public:
-        virtual bool print(std::ostream & streamResult) = 0;
+        virtual bool print(std::ostream & streamResult) const = 0;
     };
 
     template<typename FORMAT>
@@ -12,7 +12,7 @@ namespace TrustEngine{ namespace Serialization{
     public:
         StringValue(Instance const & instancevalue);
 
-        virtual bool print(std::ostream & streamResult);
+        virtual bool print(std::ostream & streamResult) const ;
     private:
         Instance content;
     };
@@ -22,7 +22,7 @@ namespace TrustEngine{ namespace Serialization{
     public:
         NumberValue(Instance const & instancevalue);
 
-        virtual bool print(std::ostream & streamResult);
+        virtual bool print(std::ostream & streamResult) const ;
     private:
         Instance content;
     };
@@ -31,7 +31,7 @@ namespace TrustEngine{ namespace Serialization{
     class ArrayValue : public Value < FORMAT > {
     public:
 
-        virtual bool print(std::ostream & streamResult);
+        virtual bool print(std::ostream & streamResult) const ;
 
         Array<FORMAT> content;
     };
@@ -39,7 +39,7 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class ObjectValue : public Value < FORMAT > {
     public:
-        virtual bool print(std::ostream & streamResult);
+        virtual bool print(std::ostream & streamResult) const ;
 
         Object<FORMAT> content;
     };
@@ -50,7 +50,7 @@ namespace TrustEngine{ namespace Serialization{
     public:
         BooleanValue(bool value);
 
-        virtual bool print(std::ostream & streamResult);
+        virtual bool print(std::ostream & streamResult) const ;
     private:
         bool content;
     };
@@ -58,7 +58,7 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class NullValue : public Value < FORMAT > {
     public:
-        virtual bool print(std::ostream & streamResult);
+        virtual bool print(std::ostream & streamResult) const ;
     };
 
 

@@ -95,14 +95,15 @@ DEFINE_CLASS_END
 using namespace MyNameSpace;
 using namespace TrustEngine::System;
 using namespace TrustEngine::Reflexion;
+using namespace TrustEngine::Serialization;
 
 
 void main(){
-    std::ostringstream stream;
 
-    stream << "hey ho !" << 545451 << 'D' << std::endl << "Okok" << StringHelper::Tab::put(4) << "tab";
-    std::cout << stream.str();
-
+    ParentClass parent;
+    Instance instance(&parent);
+    InstanceSerializer<Formats::JSON> serializer(instance);
+    serializer.serialize();
 
     Input::WaitKey();
 }

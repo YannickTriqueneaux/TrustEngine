@@ -4,17 +4,17 @@ namespace TrustEngine{ namespace Serialization{
     using Reflexion::Instance;
 
     template<>
-    bool ArrayValue< JSON >::print(std::ostream & streamResult) {
+    bool ArrayValue< JSON >::print(std::ostream & streamResult)  const {
         return content.print(streamResult);
     }
 
     template<>
-    bool ObjectValue< JSON >::print(std::ostream & streamResult) {
+    bool ObjectValue< JSON >::print(std::ostream & streamResult) const {
         return content.print(streamResult);
     }
 
     template<>
-    bool BooleanValue< JSON >::print(std::ostream & streamResult) {
+    bool BooleanValue< JSON >::print(std::ostream & streamResult) const {
         if (content){
             streamResult << "true";
         }
@@ -25,16 +25,16 @@ namespace TrustEngine{ namespace Serialization{
     }
 
     template<>
-    bool NullValue< JSON >::print(std::ostream & streamResult) {
+    bool NullValue< JSON >::print(std::ostream & streamResult) const {
         streamResult << "null";
         return true;
     }
 
 
     template<>
-    bool StringValue<JSON>::print(std::ostream & streamResult){
+    bool StringValue<JSON>::print(std::ostream & streamResult) const {
         streamResult << '"';
-        InstanceStringizer::instanceToString(streamResult, content);
+        Stringizer::instanceToString(streamResult, content);
         streamResult << '"';
         return true;
     }

@@ -4,7 +4,7 @@
 namespace TrustEngine{ namespace Serialization{
 
     /**
-    * A page is the main object returned by Serializer::serialize()
+    * A page is the main object returned by InstanceSerializer::serialize()
     * Represents the two main '{' and '}'
     * and contains an array of Values
     * @param FORMAT is the page serialization format
@@ -18,10 +18,10 @@ namespace TrustEngine{ namespace Serialization{
         * @param streamResult where put the content
         * @return false if the print fail by a parsing error
         */
-        bool print(std::ostream & streamResult);
+        bool print(std::ostream & streamResult) const ;
 
     private:
-        Array<FORMAT> content;
+        Object<FORMAT> content;
     };
 
 };};//TENS

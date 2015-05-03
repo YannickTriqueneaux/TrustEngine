@@ -4,12 +4,14 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class Array{
     public:
-        Array(int indentrange);
+        Array(std::string const & arrayname, int indentrange);
 
-        bool print(std::ostream & streamResult);
+        bool print(std::ostream & streamResult)  const ;
     private:
         int indentRange = 0;
-        std::vector<Value<FORMAT>> content;
+        std::string name;
+        typedef std::vector<Value<FORMAT> const *> ContentType;
+        ContentType content;
     };
     
 };};//TENS

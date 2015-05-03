@@ -8,18 +8,17 @@
 //dependencies
 #include "..\Reflexion\public.h"
 
-//include
-#include "InstanceStringizer.h"
-
-
 template<typename FORMAT>
 class Value;
 
+//includes
 #include "Formats.h"
 #include "Object.h"
 #include "Array.h"
 #include "Page.h"
 #include "Value.h"
+
+#include "InstanceSerializer.h"
 
 
 //supported formats
