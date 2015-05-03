@@ -7,7 +7,20 @@ namespace MyNameSpace{
     class ParentClass{
         REFLECTED_CLASS
     public:
-        int simpleint;
+        ParentClass(){
+            std::cout << "ParentInstance create";
+        }
+        ParentClass(ParentClass const & other){
+            std::cout << "ParentInstance copy";
+        }
+        ParentClass & operator=(ParentClass const & other){
+            std::cout << "ParentInstance assign";
+            return *this;
+        }
+        virtual ~ParentClass(){
+            std::cout << "ParentInstance destroy";
+        }
+        int simpleint = 0;;
     };
     class SuperClass{
         REFLECTED_CLASS

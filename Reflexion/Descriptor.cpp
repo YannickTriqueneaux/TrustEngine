@@ -53,6 +53,9 @@ bool Descriptor::isAnArray() const{
 bool Descriptor::isAGeneric() const{
     return false;
 }
+bool Descriptor::isAContainer() const {
+    return false;
+}
 
 
 };};//TENS

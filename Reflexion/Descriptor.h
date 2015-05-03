@@ -68,6 +68,7 @@ public:
     virtual bool isStringizable() const ;
     virtual bool isAnArray() const ;
     virtual bool isAGeneric() const ;
+    virtual bool isAContainer() const;
 private:
     std::map<std::string, Field> fields;
     std::map<std::string, Descriptor const *> descriptorField;

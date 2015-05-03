@@ -2,6 +2,11 @@ namespace TrustEngine{ namespace Reflexion{
 
 class PairDescriptorBase : public ArrayDescriptor{
 public:
+    
+    virtual bool isAContainer() const{
+        return true;
+    }
+    virtual bool getContentInstances(std::map<std::string, Instance> & contentResult, Instance const & fromInstance) const = 0;
 };
 
 template<typename FirstType, typename SecondType>
@@ -49,6 +54,12 @@ public:
 		_descriptor = newDescriptor;
 		return _descriptor;
 	}
+    virtual bool getContentInstances(std::map<std::string, Instance> & contentResult, Instance const & fromInstance) const {
+        std::pair<FirstType, SecondValueType> & pair = *reinterpret_cast<std::pair<FirstType, SecondValueType>*>(fromInstance.get());
+        contentResult.emplace( "key", Instance(&pair.first) );
+        contentResult.emplace( "value", Instance(&pair.second) );
+        return true;
+    }
 };
 
 template<typename FistValueType, typename SecondValueType>
