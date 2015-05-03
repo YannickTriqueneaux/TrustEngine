@@ -105,7 +105,7 @@ void testDescritporGetting(){
     getDescriptorOf<ChildClass>();
     getDescriptorOf<TempClass<SuperClass>>();
     getDescriptorOf<TemplChild>();
-    DescriptorRegistry::printDescriptorList();
+    DescriptorRegistry::_printDescriptorList();
 }
 
 void testFieldInstanceGetting(){

@@ -2,31 +2,31 @@ namespace TrustEngine{ namespace Reflexion{
 
 template<typename Type>
 class GenericDescriptor : public Descriptor{
-    static std::string const descriptorName;
+    static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	GenericDescriptor():parentClassDescriptor(nullptr){}
-    static std::string const & getDescriptorName(){
-		return descriptorName;
+    static std::string const & _getDescriptorName(){
+		return _descriptorName;
 	}
 	Descriptor const * parentClassDescriptor;
     std::vector<Descriptor const*> inferDescriptors;
 public:
     virtual std::string const & getName() const {
-        return getDescriptorName();
+        return _getDescriptorName();
     }
-    static std::string const & getInstanceTypeName(){
-		return Type::getClassName();
+    static std::string const & _getInstanceTypeName(){
+        return Type::_getClassName();
     }
     virtual std::string const & getInstanceTypename() const {
-        return getInstanceTypeName();
+        return _getInstanceTypeName();
     }
-	static bool isTemplateClass(){
-		return Type::isTemplateClass;
+	static bool _isTemplateClass(){
+		return Type::_isTemplateClass;
 	}
 	typedef GenericDescriptor<Type> SelfType;
 	typedef Type InstanceType;
-	static Descriptor const * getDescriptorInstance(){
-		return Type::getClassDescriptor();
+	static Descriptor const * _getDescriptorInstance(){
+        return Type::_getClassDescriptor();
 	}
 	virtual void setParentClassDescriptor(Descriptor const * parentClassDescriptor){
 		this->parentClassDescriptor = parentClassDescriptor;
@@ -45,12 +45,12 @@ public:
 
 
 template<typename Type>
-std::string const GenericDescriptor<Type>::descriptorName = std::string("GenericDescriptor<").append(GenericDescriptor<Type>::getInstanceTypeName()).append(">");
+std::string const GenericDescriptor<Type>::_descriptorName = std::string("GenericDescriptor<").append(GenericDescriptor<Type>::_getInstanceTypeName()).append(">");
 
 template<typename Type>
 template<typename InferType>
 void GenericDescriptor<Type>::addInferType(){
-    Descriptor const * inferDescriptor = DescriptorHelper<InferType>::DescriptorType::getDescriptorInstance();
+    Descriptor const * inferDescriptor = DescriptorHelper<InferType>::DescriptorType::_getDescriptorInstance();
     if (inferDescriptor){
         inferDescriptors << inferDescriptor;
     }

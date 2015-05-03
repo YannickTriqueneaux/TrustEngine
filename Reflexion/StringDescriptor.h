@@ -2,36 +2,36 @@ namespace TrustEngine{ namespace Reflexion{
 
 
 class StringDescriptor : public StringizableDescriptor{
-    static std::string const descriptorName;
+    static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	StringDescriptor(){}
 public:
 	typedef StringDescriptor SelfType;
     typedef std::string InstanceType;
-    static std::string const & getDescriptorName(){
-		return descriptorName;
+    static std::string const & _getDescriptorName(){
+		return _descriptorName;
     }
     virtual std::string const & getName() const {
-        return getDescriptorName();
+        return _getDescriptorName();
     }
-    static std::string const & getInstanceTypeName(){
-        static std::string const instanceTypeName(_stringize(std::string));
-		return instanceTypeName;
+    static std::string const & _getInstanceTypeName(){
+        static std::string const _instanceTypeName(_stringize(std::string));
+		return _instanceTypeName;
     }
     virtual std::string const & getInstanceTypename() const {
-        return getInstanceTypeName();
+        return _getInstanceTypeName();
     }
-	static Descriptor const * getDescriptorInstance(){
-		static Descriptor const * descriptor;
-		if(descriptor){
-			return descriptor;
+	static Descriptor const * _getDescriptorInstance(){
+		static Descriptor const * _descriptor;
+		if(_descriptor){
+			return _descriptor;
 		}
-		descriptor = DescriptorRegistry::getDescriptor(getDescriptorName());
-		if(descriptor != nullptr){
-			return descriptor;
+		_descriptor = DescriptorRegistry::_getDescriptor(_getDescriptorName());
+		if(_descriptor != nullptr){
+			return _descriptor;
 		}
-        descriptor = DescriptorRegistry::createDescriptor<SelfType>();
-		return descriptor;
+        _descriptor = DescriptorRegistry::_createDescriptor<SelfType>();
+		return _descriptor;
 	}
 
     inline virtual bool isStringizable() const {

@@ -59,7 +59,7 @@ public:
 
 
     
-    static Descriptor const * getDescriptorInstance();
+    static Descriptor const * _getDescriptorInstance();
     virtual void setParentClassDescriptor(Descriptor const * parentClassDescriptor);
     virtual Descriptor const * getParentClassDescriptor() const ;
 

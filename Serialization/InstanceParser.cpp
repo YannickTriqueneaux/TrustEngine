@@ -29,7 +29,7 @@ namespace TrustEngine{ namespace Serialization{
 
     template<typename FORMAT>
     bool fillObject(ObjectValue<FORMAT> & objectvalue, Instance const & instance){
-        auto map = objectvalue.content.getContent();
+        auto map = objectvalue.content->getContent();
 
         
         

@@ -23,7 +23,7 @@ void main(){
 	ParentClass test;
 	auto descriptor = test.getDescriptor();
 
-	DescriptorRegistry::printDescriptorList();
+    DescriptorRegistry::_printDescriptorList();
 
     Guid::generate();
 }

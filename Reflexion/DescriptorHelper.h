@@ -2,8 +2,8 @@ namespace TrustEngine{ namespace Reflexion{
 
 
 template<typename Type>
-Descriptor const * getDescriptorOf(Type const &){
-	return DescriptorHelper<Type>::DescriptorType::getDescriptorInstance();
+Descriptor const * getDescriptorOf(Type const & instance){
+	return DescriptorHelper<Type>::DescriptorType::_getDescriptorInstance();
 }
 //template<typename Type>
 //Descriptor const * getDescriptorOf(Type const &&){
@@ -11,7 +11,7 @@ Descriptor const * getDescriptorOf(Type const &){
 //}
 template<typename Type>
 Descriptor const * getDescriptorOf(){
-	return DescriptorHelper<Type>::DescriptorType::getDescriptorInstance();
+	return DescriptorHelper<Type>::DescriptorType::_getDescriptorInstance();
 }
 
 template<typename Type>

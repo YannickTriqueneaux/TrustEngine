@@ -3,14 +3,14 @@ namespace TrustEngine{ namespace Reflexion{
 
 DescriptorRegistry::DescriptorRegistry(){
 }
-DescriptorRegistry & DescriptorRegistry::getInstance(){
+DescriptorRegistry & DescriptorRegistry::_getInstance(){
 	static DescriptorRegistry instance;
 	return instance;
 }
 
 
-Descriptor * DescriptorRegistry::getDescriptor(std::string const & descriptorName){
-	DescriptorRegistry & registry = getInstance();
+Descriptor * DescriptorRegistry::_getDescriptor(std::string const & descriptorName){
+	DescriptorRegistry & registry = _getInstance();
 	auto found = registry.descriptors.find(descriptorName);
 	if(found == registry.descriptors.end()){
 		return nullptr;
@@ -19,8 +19,8 @@ Descriptor * DescriptorRegistry::getDescriptor(std::string const & descriptorNam
 	}
 }
 
-void DescriptorRegistry::printDescriptorList(){
-	DescriptorRegistry & registry = getInstance();
+void DescriptorRegistry::_printDescriptorList(){
+	DescriptorRegistry & registry = _getInstance();
     std::for_each(registry.descriptors.begin(), registry.descriptors.end(), [](DescriptorListType::value_type const & ite){
         std::cout << ite.first << std::endl;
 	});

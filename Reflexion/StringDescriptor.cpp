@@ -1,6 +1,6 @@
 namespace TrustEngine{ namespace Reflexion{
     
-std::string const StringDescriptor::descriptorName = _stringize(StringDescriptor);
+std::string const StringDescriptor::_descriptorName = _stringize(StringDescriptor);
 
 
 void StringDescriptor::stringize(std::ostream & streamResult, Instance const & instance) const{

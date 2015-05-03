@@ -22,7 +22,7 @@ bool Descriptor::containsField(std::string const & fieldname) const {
 }
 
 
-Descriptor const * Descriptor::getDescriptorInstance(){ 
+Descriptor const * Descriptor::_getDescriptorInstance(){ 
     assert(0); return nullptr; 
 }
 
