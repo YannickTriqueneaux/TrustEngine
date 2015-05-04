@@ -118,7 +118,7 @@ void main(){
     InstanceSerializer<Formats::JSON> serializer(instance);
     std::stringstream stream;
     serializer.serialize(stream);
-    std::cout << stream.str();
+    std::cout << stream.str();///problem with string !!go test that !
 
     Input::_waitKey();
 }
