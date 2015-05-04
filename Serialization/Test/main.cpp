@@ -113,8 +113,8 @@ using namespace TrustEngine::Serialization;
 
 void main(){
 
-    ParentClass parent;
-    Instance instance(&parent);
+    std::string strvalue;
+    Instance instance(&strvalue);
     InstanceSerializer<Formats::JSON> serializer(instance);
     std::stringstream stream;
     serializer.serialize(stream);

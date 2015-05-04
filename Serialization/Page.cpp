@@ -9,7 +9,10 @@ namespace TrustEngine{ namespace Serialization{
 
     bool Page<JSON>::print(std::ostream & streamResult) const {
         assert(content && "Page::print empty page");
-        return content->print(streamResult);
+        streamResult << '{' << std::endl;
+        auto succeed = content->print(streamResult);
+        streamResult << std::endl << '}' << std::endl;
+        return succeed;
     }
 
 

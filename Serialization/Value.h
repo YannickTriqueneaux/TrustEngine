@@ -10,20 +10,18 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class StringValue : public Value<FORMAT>{
     public:
-        StringValue(Instance const & instancevalue);
 
         virtual bool print(std::ostream & streamResult) const ;
-    private:
+
         Instance content;
     };
 
     template<typename FORMAT>
     class NumberValue : public Value < FORMAT > {
     public:
-        NumberValue(Instance const & instancevalue);
 
-        virtual bool print(std::ostream & streamResult) const ;
-    private:
+        virtual bool print(std::ostream & streamResult) const;
+
         Instance content;
     };
 
@@ -33,7 +31,7 @@ namespace TrustEngine{ namespace Serialization{
 
         virtual bool print(std::ostream & streamResult) const ;
 
-        Array<FORMAT> content;
+        Element<FORMAT> * content;
     };
 
     template<typename FORMAT>
@@ -41,18 +39,17 @@ namespace TrustEngine{ namespace Serialization{
     public:
         virtual bool print(std::ostream & streamResult) const ;
 
-        Object<FORMAT> * content;
+        Element<FORMAT> * content;
     };
 
 
     template<typename FORMAT>
     class BooleanValue : public Value < FORMAT > {
     public:
-        BooleanValue(bool value);
 
-        virtual bool print(std::ostream & streamResult) const ;
-    private:
-        bool content;
+        virtual bool print(std::ostream & streamResult) const;
+
+        Instance content;
     };
 
     template<typename FORMAT>

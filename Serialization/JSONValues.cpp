@@ -1,11 +1,11 @@
 namespace TrustEngine{ namespace Serialization{
     
     using Formats::JSON; 
-    using Reflexion::Instance;
+    using namespace Reflexion;
 
     template<>
     bool ArrayValue< JSON >::print(std::ostream & streamResult)  const {
-        return content.print(streamResult);
+        return content->print(streamResult);
     }
 
     template<>
@@ -15,7 +15,8 @@ namespace TrustEngine{ namespace Serialization{
 
     template<>
     bool BooleanValue< JSON >::print(std::ostream & streamResult) const {
-        if (content){
+        auto boolean = static_cast<BooleanBaseDescriptor const *>(content.getType())->instanceToBoolean(content);
+        if (boolean){
             streamResult << "true";
         }
         else{
@@ -32,10 +33,17 @@ namespace TrustEngine{ namespace Serialization{
 
 
     template<>
-    bool StringValue<JSON>::print(std::ostream & streamResult) const {
+    bool StringValue< JSON >::print(std::ostream & streamResult) const {
         streamResult << '"';
         Stringizer::instanceToString(streamResult, content);
         streamResult << '"';
         return true;
     }
+
+    template<>
+    bool NumberValue< JSON >::print(std::ostream & streamResult) const {
+        Stringizer::instanceToString(streamResult, content);
+        return true;
+    }
+
 };};//TENS

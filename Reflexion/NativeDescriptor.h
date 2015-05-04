@@ -3,8 +3,24 @@ namespace TrustEngine{ namespace Reflexion{
 template<typename Type>
 class NativeDescriptor : public StringizableDescriptor{
 };
+
+class BooleanBaseDescriptor : public StringizableDescriptor{
+public:
+    virtual bool instanceToBoolean(Instance const & instance) const = 0;
+    virtual bool isABoolean() const {
+        return true;
+    }
+};
+
+class NumberBaseDescriptor : public StringizableDescriptor{
+public:
+    virtual bool isANumber() const {
+        return true;
+    }
+};
+
 template<>
-class NativeDescriptor<bool> : public Descriptor{
+class NativeDescriptor<bool> : public BooleanBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}
@@ -37,10 +53,11 @@ public:
 		_descriptor = newDescriptor;
 		return _descriptor;
 	}
+    virtual bool instanceToBoolean(Instance const & instance) const;
     virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 template<>
-class NativeDescriptor<int> : public Descriptor{
+class NativeDescriptor<int> : public NumberBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}
@@ -77,7 +94,7 @@ public:
 };
 
 template<>
-class NativeDescriptor<short> : public Descriptor{
+class NativeDescriptor<short> : public NumberBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}
@@ -109,12 +126,12 @@ public:
 		Descriptor * newDescriptor = DescriptorRegistry::_createDescriptor<SelfType>();
 		_descriptor = newDescriptor;
 		return _descriptor;
-	}
+    }
     virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 
 template<>
-class NativeDescriptor<long> : public Descriptor{
+class NativeDescriptor<long> : public NumberBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}
@@ -152,7 +169,7 @@ public:
 };
 
 template<>
-class NativeDescriptor<float> : public Descriptor{
+class NativeDescriptor<float> : public NumberBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}
@@ -190,7 +207,7 @@ public:
 };
 
 template<>
-class NativeDescriptor<double> : public Descriptor{
+class NativeDescriptor<double> : public NumberBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}
@@ -228,7 +245,7 @@ public:
 };
 
 template<>
-class NativeDescriptor<unsigned int> : public Descriptor{
+class NativeDescriptor<unsigned int> : public NumberBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	NativeDescriptor(){}

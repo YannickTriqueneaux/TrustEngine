@@ -16,9 +16,9 @@ namespace TrustEngine{ namespace Serialization{
         streamResult << Tab::_put(indentRange + 1);
 
         ContentType::size_type cpt = 0;
-        std::for_each(content.begin(), content.end(), [&](ContentType::value_type const & ite){
+        std::for_each(elements.begin(), elements.end(), [&](ContentType::value_type const & ite){
             ite->print(streamResult);
-            if (cpt++ < content.size()){
+            if (cpt++ < elements.size()){
                 streamResult << ',' << std::endl;
                 streamResult << Tab::_put(indentRange + 1);
             }

@@ -11,32 +11,37 @@ std::string const NativeDescriptor<unsigned int>::_descriptorName = _stringize(N
 
 
 void NativeDescriptor<bool>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<bool*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<bool>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<bool*>(instance.get());
 }
 void NativeDescriptor<int>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<int*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<int>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<int*>(instance.get());
 }
 void NativeDescriptor<short>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<short*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<short>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<short*>(instance.get());
 }
 void NativeDescriptor<long>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<long*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<long>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<long*>(instance.get());
 }
 void NativeDescriptor<float>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<float*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<float>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<float*>(instance.get());
 }
 void NativeDescriptor<double>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<double*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<double>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<double*>(instance.get());
 }
 void NativeDescriptor<unsigned int>::stringize(std::ostream & streamResult, Instance const & instance) const{
-    assert(instance.isEmpty() && "StringDescriptor::stringize - the given instance is empty");
-    streamResult << reinterpret_cast<unsigned int*>(instance.get());
+    assert(!instance.isEmpty() && "NativeDescriptor<unsigned int>::stringize - the given instance is empty");
+    streamResult << *reinterpret_cast<unsigned int*>(instance.get());
+}
+
+bool NativeDescriptor<bool>::instanceToBoolean(Instance const & instance) const {
+    assert(!instance.isEmpty() && "NativeDescriptor<bool>::instanceToBoolean - the given instance if empty");
+    return *reinterpret_cast<bool const*>(instance.get());
 }
 
 };};//TENS

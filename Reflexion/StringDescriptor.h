@@ -33,12 +33,9 @@ public:
         _descriptor = DescriptorRegistry::_createDescriptor<SelfType>();
 		return _descriptor;
 	}
-
-    inline virtual bool isStringizable() const {
-        return false;
-    };
-
-
+    bool isAString() const {
+        return true;
+    }
     virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 

@@ -11,7 +11,7 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class Page{
     public:
-        typedef Value<FORMAT>* ContentType;
+        typedef Element<FORMAT>* ContentType;
 
         Page();
         /**
@@ -21,14 +21,9 @@ namespace TrustEngine{ namespace Serialization{
         */
         bool print(std::ostream & streamResult) const ;
 
-        void setContent(ContentType newContent){
-            content = newContent;
-        };
-        ContentType getContent(){
-            return content;
-        }
-    private:
+
         ContentType content = nullptr;
+    private:
     };
 
 };};//TENS

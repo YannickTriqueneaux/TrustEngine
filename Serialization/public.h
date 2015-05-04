@@ -13,6 +13,8 @@ class Value;
 
 //includes
 #include "Formats.h"
+#include "Element.h"
+#include "Stringizable.h"
 #include "Object.h"
 #include "Array.h"
 #include "Page.h"

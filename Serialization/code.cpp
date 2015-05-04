@@ -4,6 +4,7 @@
 
 //sources
 #include "Value.cpp"
+#include "Stringizable.cpp"
 #include "Object.cpp"
 #include "Array.cpp"
 #include "Page.cpp"
