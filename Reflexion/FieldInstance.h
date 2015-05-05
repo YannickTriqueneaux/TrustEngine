@@ -32,7 +32,7 @@ namespace TrustEngine{ namespace Reflexion{
         friend bool operator != (FieldInstance const & first, FieldInstance const & second);
     private:
         Instance fieldInstance;
-        Field const * field;
+        Field const * field = nullptr;
     };
 
     

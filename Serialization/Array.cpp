@@ -7,6 +7,14 @@ namespace TrustEngine{ namespace Serialization{
         :indentRange(indentrange),
         name(arrayname){}
 
+    template<typename FORMAT>
+    Array<FORMAT>::~Array(){
+        std::for_each(elements.begin(), elements.end(), [](ContentType::value_type const & elmt){
+            delete elmt;
+        });
+    }
+
+
     template<>
     bool Array<Formats::JSON>::print(std::ostream & streamResult) const {
         if (!name.empty()){
@@ -27,6 +35,5 @@ namespace TrustEngine{ namespace Serialization{
         streamResult << Tab::_put(indentRange) << ']';
         return true;
     }
-
 
 };};//TENS

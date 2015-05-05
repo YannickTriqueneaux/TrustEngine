@@ -6,26 +6,37 @@ namespace TrustEngine{ namespace Serialization{
         indentRange(indentrange),
         name(objectname)
     {}
+    template<typename FORMAT>
+    Object<FORMAT>::~Object(){
+        std::for_each(members.begin(), members.end(), [](ContentType::value_type const & pair){
+            delete pair.second;
+        });
+    }
+    template<typename FORMAT>
+    int Object<FORMAT>::getIndent() const {
+        return indentRange;
+    }
 
     template<>
     bool Object<Formats::JSON>::print(std::ostream & streamResult) const {
         if (!name.empty()){
-            streamResult << '"' << name << '"' << ": ";
+            streamResult << Tab::_put(indentRange) << '"' << name << '"' << ": ";
         }
         streamResult << "{" << std::endl;
-        streamResult << Tab::_put(indentRange + 1 );
 
         ContentType::size_type cpt = 0;
         std::for_each(members.begin(), members.end(), [&](ContentType::value_type const & ite){
-            streamResult << '"' << ite.first << '"' << ": ";
+            //streamResult << '"' << ite.first << '"' << ": ";
             ite.second->print(streamResult);
-            if (cpt++ < members.size()){
-                streamResult << ',' << std::endl;
-                streamResult << Tab::_put(indentRange + 1);
+            if (++cpt < members.size()){
+                streamResult << ',';
             }
+            streamResult << std::endl;
         });
 
         streamResult << Tab::_put(indentRange) << '}';
         return true;
     }
+
+    
 };};//TENS

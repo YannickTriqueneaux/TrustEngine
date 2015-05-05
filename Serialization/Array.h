@@ -8,6 +8,7 @@ namespace TrustEngine{ namespace Serialization{
 
 
         Array(std::string const & arrayname, int indentrange);
+        ~Array();
 
         virtual bool print(std::ostream & streamResult)  const ;
 

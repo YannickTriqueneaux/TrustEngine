@@ -1,7 +1,14 @@
 namespace TrustEngine{ namespace Reflexion{
 
+class StringBaseDescriptor : public StringizableDescriptor{
+public:
 
-class StringDescriptor : public StringizableDescriptor{
+    virtual bool isAString() const {
+        return true;
+    }
+    virtual void stringize(std::ostream & streamResult, Instance const & instance) const = 0;
+};
+class StringDescriptor : public StringBaseDescriptor{
     static std::string const _descriptorName;
 	friend class DescriptorRegistry;
 	StringDescriptor(){}
@@ -33,9 +40,6 @@ public:
         _descriptor = DescriptorRegistry::_createDescriptor<SelfType>();
 		return _descriptor;
 	}
-    bool isAString() const {
-        return true;
-    }
     virtual void stringize(std::ostream & streamResult, Instance const & instance) const;
 };
 

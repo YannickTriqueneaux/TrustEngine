@@ -24,11 +24,15 @@ namespace TrustEngine{ namespace Serialization{
         }
         if (instanceDesc->isAnArray()){
             Array<FORMAT> * arrayElement = new Array<FORMAT>(instancelabel, indent);
-            return fillArray<FORMAT>(*arrayElement, instance);
+            auto succeed = fillArray<FORMAT>(*arrayElement, instance);
+            arrayElement = arrayElement;
+            return succeed;
         }
         else if (instanceDesc->isAGeneric()){
             Object<FORMAT> * objectvalue = new Object < FORMAT >(instancelabel, indent);
-            return fillObject<FORMAT>(*objectvalue, instance);
+            auto succeed = fillObject<FORMAT>(*objectvalue, instance);
+            valueResult = objectvalue;
+            return succeed;
         }
         else if (instanceDesc->isStringizable()){
             Stringizable<FORMAT> * strElement = new Stringizable < FORMAT >(instancelabel, indent);
@@ -58,11 +62,30 @@ namespace TrustEngine{ namespace Serialization{
 
     template<typename FORMAT>
     bool fillObject(Object<FORMAT> & objectvalue, Instance const & instance){
+        bool succeed = true;
         auto & map = objectvalue.members;
+        auto descriptor = instance.getType();
+        std::vector<Field const *> fields = std::move(descriptor->getFields(true));
 
         
+        std::for_each(fields.begin(), fields.end(), [&](std::vector<Field const*>::value_type const & field){
+            FieldInstance fieldInstance(instance,*field);
+            auto & instanceResult = fieldInstance.getInstance();
+            if (instanceResult.isEmpty()){
+                succeed = false;
+                return;
+            }
+            else{
+                Element<FORMAT> * element = nullptr;
+                succeed = getElementFormInstance(element, instanceResult, field, objectvalue.getIndent() + 1) && succeed;
+                if (element){
+                    map.emplace(field->getName(), element);
+                }
+            }
+
+        });
         
-        return true;
+        return succeed;
     }
 
     template<typename FORMAT>

@@ -8,17 +8,22 @@ namespace MyNameSpace{
         REFLECTED_CLASS
     public:
         ParentClass(){
-            std::cout << "ParentInstance create";
+            std::cout << "ParentInstance(" << simpleint << ") create" ;
         }
         ParentClass(ParentClass const & other){
-            std::cout << "ParentInstance copy";
+            std::cout << "ParentInstance(" << simpleint << ") copy";
+        }
+        ParentClass(ParentClass && other){
+            std::swap(simpleint, other.simpleint);
+            std::cout << "ParentInstance(" << simpleint << ") move";
         }
         ParentClass & operator=(ParentClass const & other){
-            std::cout << "ParentInstance assign";
+            std::cout << "ParentInstance(" << simpleint << ") assign";
             return *this;
         }
         virtual ~ParentClass(){
-            std::cout << "ParentInstance destroy";
+            std::cout << "ParentInstance(" << simpleint << ") destroy";
+            simpleint = -1;
         }
         int simpleint = 0;;
     };
@@ -111,13 +116,14 @@ using namespace TrustEngine::Reflexion;
 using namespace TrustEngine::Serialization;
 
 
-void main(){
 
-    std::string strvalue;
-    Instance instance(&strvalue);
+void main(){
+    ComposedObject parent;
+    Instance instance(&parent);
     InstanceSerializer<Formats::JSON> serializer(instance);
     std::stringstream stream;
     serializer.serialize(stream);
+    std::cout << std::endl << std::endl;
     std::cout << stream.str();///problem with string !!go test that !
 
     Input::_waitKey();

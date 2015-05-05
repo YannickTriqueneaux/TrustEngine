@@ -84,6 +84,7 @@
     <ClInclude Include="Guid.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Macro.h" />
+    <ClInclude Include="MapHelper.h" />
     <ClInclude Include="Meta.h" />
     <ClInclude Include="private.h" />
     <ClInclude Include="public.h" />

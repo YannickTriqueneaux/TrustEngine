@@ -51,6 +51,9 @@ public:
     */
     Field const * getField(std::string const & fieldName) const ;
 
+
+    std::vector<Field const *> getFields(bool withParentFields = true) const;
+
     /**
     * @return true if the given Field exist inside the descriptor
     */
@@ -70,7 +73,8 @@ public:
     virtual bool isAGeneric() const ;
     virtual bool isAContainer() const;
 private:
-    std::map<std::string, Field> fields;
+    typedef std::map<std::string, Field> FieldsMapType;
+    FieldsMapType fields;
     std::map<std::string, Descriptor const *> descriptorField;
 };
 

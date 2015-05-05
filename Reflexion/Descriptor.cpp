@@ -14,6 +14,19 @@ Field const * Descriptor::getField(std::string const & fieldName) const {
     }
     return &found->second;
 }
+std::vector<Field const *> Descriptor::getFields(bool withParentFields) const {
+    std::vector<Field const *> result;
+    auto parentDesc = getParentClassDescriptor();
+    if (withParentFields && parentDesc){
+        result = std::move(parentDesc->getFields(withParentFields));
+    }
+    std::for_each(fields.begin(), fields.end(), [&](FieldsMapType::value_type const & pair){
+        result.push_back(&(pair.second));
+    });
+    return std::move(result);
+}
+
+
 bool Descriptor::containsField(Field const & field) const {
     return !!getField(field.getName());
 }

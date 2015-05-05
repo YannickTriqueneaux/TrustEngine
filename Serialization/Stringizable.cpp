@@ -7,13 +7,18 @@ namespace TrustEngine{
             indentRange(indentrange),
             name(objectname)
         {}
+        template<typename FORMAT>
+        Stringizable<FORMAT>::~Stringizable(){
+            delete value;
+        }
 
         template<>
         bool Stringizable<Formats::JSON>::print(std::ostream & streamResult) const {
+            streamResult << Tab::_put(indentRange);
             if (!name.empty()){
                 streamResult << '"' << name << '"' << ": ";
             }
-            streamResult << value->print(streamResult);
+            value->print(streamResult);
             return true;
         }
     };

@@ -12,7 +12,7 @@ namespace TrustEngine{ namespace Reflexion{
         virtual bool isANumber() const {
             return false;
         }
-        bool isAString() const {
+        virtual bool isAString() const {
             return false;
         }
 

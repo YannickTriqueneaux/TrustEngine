@@ -9,6 +9,7 @@ namespace TrustEngine{
             if (!instance.isEmpty()
                 && instance.getType()->isStringizable()){
                 static_cast<Reflexion::StringizableDescriptor const*>(instance.getType())->stringize(streamResult, instance);
+                return true;
             }
             return false;
         }

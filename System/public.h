@@ -31,6 +31,7 @@
 #include "Macro.h"
 #include "Meta.h"
 #include "VectorHelper.h"
+#include "MapHelper.h"
 #include "StringHelper.h"
 #include "Guid.h"
 #include "Input.h"
