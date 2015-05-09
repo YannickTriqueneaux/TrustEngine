@@ -11,7 +11,6 @@ namespace StringHelper{
     const std::string EmptyString = "";
 
     struct Tab{
-        static const int _NB_SPACE_BY_TAB;
         static std::string _put(int nbTab);
     };
 

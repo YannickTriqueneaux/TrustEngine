@@ -5,7 +5,7 @@ public:
 	Instance();
 	Instance(void * instance, Descriptor const * descriptor);
 	template<typename T>
-	inline Instance(T * instance);
+    inline Instance(T const * instance);
 
 	void * get() const ;
 	Descriptor const * getType() const ;
@@ -26,7 +26,7 @@ private:
 };
 
 template<typename T>
-inline Instance::Instance(T * instance) : instance(reinterpret_cast<void*>(instance)), descriptor(getDescriptorOf<T>()){
+inline Instance::Instance(T const * instance) : instance(const_cast<T*>(instance)), descriptor(getDescriptorOf<T>()){
 }
 
 };};//TENS

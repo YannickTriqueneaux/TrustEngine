@@ -9,9 +9,9 @@ template<typename FirstType,typename SecondType>
 class MapDescriptor : public MapDescriptorBase{
     static std::string const descriptorName;
 
-    typedef std::map<FirstType, SecondType > InstanceType;
-    typedef std::pair<FirstType, SecondType>	ValueType;
-	typedef MapDescriptor<FirstType, SecondType > SelfType;
+    typedef std::map<FirstType, SecondType >        InstanceType;
+    typedef std::pair<FirstType, SecondType >	    ValueType;
+	typedef MapDescriptor<FirstType, SecondType >   SelfType;
 
 	typedef FirstType FistValueType;
 	typedef SecondType SecondValueType;
@@ -31,7 +31,7 @@ public:
         return _getDescriptorName();
     }
     static std::string const & _getInstanceTypeName(){
-        static std::string const _instanceTypeName(std::string("Map<").append(DescriptorHelper<FistValueType>::DescriptorType::_getInstanceTypeName()).append(",")
+        static std::string const _instanceTypeName(std::string("std::map<").append(DescriptorHelper<FistValueType>::DescriptorType::_getInstanceTypeName()).append(",")
 			.append(DescriptorHelper<SecondValueType>::DescriptorType::_getInstanceTypeName()).append(">"));
 		return _instanceTypeName;
     }
@@ -52,6 +52,18 @@ public:
 		_descriptor = newDescriptor;
 		return _descriptor;
 	}
+
+    virtual std::vector<Instance> getInstancesOfElements(Instance const & mapInstance) const {
+        using namespace TrustEngine::System::StringHelper;
+        assert(!mapInstance.isEmpty() && "MapDescriptor::getInstancesOfElements - the given map instance cannot be empty");
+        assert((mapInstance.getType() == this) && "MapDescriptor::getInstancesOfElements - the given instance don't match with the expected descriptor");
+        InstanceType const * vector = reinterpret_cast<InstanceType const*>(mapInstance.get());
+        std::vector<Instance> elements;
+        std::for_each(vector->begin(), vector->end(), [&elements](InstanceType::value_type const & elmt){
+            elements << const_cast<ValueType*>(reinterpret_cast<const ValueType*>(&elmt));//remove 'const' form the key value type
+        });
+        return std::move(elements);
+    }
 };
 
 template<typename FistValueType, typename SecondValueType>

@@ -14,22 +14,26 @@ namespace TrustEngine{ namespace Serialization{
         });
     }
 
+    template<typename FORMAT>
+    int Array<FORMAT>::getIndent() const{
+        return indentRange;
+    }
+
 
     template<>
     bool Array<Formats::JSON>::print(std::ostream & streamResult) const {
         if (!name.empty()){
-            streamResult << '"' << name << '"' << ": ";
+            streamResult << Tab::_put(indentRange) << '"' << name << '"' << ": ";
         }
         streamResult << "[" << std::endl;
-        streamResult << Tab::_put(indentRange + 1);
 
         ContentType::size_type cpt = 0;
         std::for_each(elements.begin(), elements.end(), [&](ContentType::value_type const & ite){
             ite->print(streamResult);
-            if (cpt++ < elements.size()){
-                streamResult << ',' << std::endl;
-                streamResult << Tab::_put(indentRange + 1);
+            if (++cpt < elements.size()){
+                streamResult << ',';
             }
+            streamResult << std::endl;
         });
 
         streamResult << Tab::_put(indentRange) << ']';

@@ -18,6 +18,11 @@ template<typename Type>
 struct DescriptorHelper{
 	typedef GenericDescriptor<Type> DescriptorType;
 };
+
+template<>
+struct DescriptorHelper < double > {
+    typedef NativeDescriptor<double> DescriptorType;
+};
 template<>
 struct DescriptorHelper < bool > {
 	typedef NativeDescriptor<bool> DescriptorType;
@@ -66,6 +71,25 @@ struct DescriptorHelper<std::pair<T, U>> {
 	typedef PairDescriptor<T, U> DescriptorType;
 };
 
+//constant types support
+template<>
+struct DescriptorHelper < std::string const > {
+    typedef StringDescriptor DescriptorType;
+};
+
+template<typename T>
+struct DescriptorHelper < std::vector<T> const > {
+    typedef VectorDescriptor<T> DescriptorType;
+};
+
+template<typename T, typename U>
+struct DescriptorHelper < std::map<T, U> const > {
+    typedef MapDescriptor<T, U> DescriptorType;
+};
+template<typename T, typename U>
+struct DescriptorHelper < std::pair<T, U> const > {
+    typedef PairDescriptor<T, U> DescriptorType;
+};
 
 
 };};//TENS

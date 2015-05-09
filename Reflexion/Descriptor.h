@@ -70,7 +70,7 @@ public:
     virtual std::string const & getInstanceTypename() const;
     virtual bool isStringizable() const ;
     virtual bool isAnArray() const ;
-    virtual bool isAGeneric() const ;
+    virtual bool isAGeneric() const;
     virtual bool isAContainer() const;
 private:
     typedef std::map<std::string, Field> FieldsMapType;

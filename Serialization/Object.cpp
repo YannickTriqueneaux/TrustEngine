@@ -26,7 +26,6 @@ namespace TrustEngine{ namespace Serialization{
 
         ContentType::size_type cpt = 0;
         std::for_each(members.begin(), members.end(), [&](ContentType::value_type const & ite){
-            //streamResult << '"' << ite.first << '"' << ": ";
             ite.second->print(streamResult);
             if (++cpt < members.size()){
                 streamResult << ',';

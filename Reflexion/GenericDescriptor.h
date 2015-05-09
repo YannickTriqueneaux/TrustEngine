@@ -50,6 +50,7 @@ std::string const GenericDescriptor<Type>::_descriptorName = std::string("Generi
 template<typename Type>
 template<typename InferType>
 void GenericDescriptor<Type>::addInferType(){
+    using namespace TrustEngine::System::StringHelper;
     Descriptor const * inferDescriptor = DescriptorHelper<InferType>::DescriptorType::_getDescriptorInstance();
     if (inferDescriptor){
         inferDescriptors << inferDescriptor;

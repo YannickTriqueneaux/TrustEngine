@@ -19,14 +19,13 @@ namespace StringHelper{
     }
 
     //Tabulation
-    const int Tab::_NB_SPACE_BY_TAB = 4;
+
     std::string Tab::_put(int nbTab){
         std::string result;
-        auto nbSpace = nbTab * _NB_SPACE_BY_TAB;
-        result.reserve(nbSpace);
-        result.resize(nbSpace);
-        for (auto i = 0; i < nbSpace; ++i){
-            result[i] = ' ';
+        result.reserve(nbTab);
+        result.resize(nbTab);
+        for (auto i = 0; i < nbTab; ++i){
+            result[i] = '\t';
         }
         return std::move(result);
     }

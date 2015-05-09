@@ -4,7 +4,7 @@ namespace TrustEngine{ namespace Serialization{
     template<typename FORMAT>
     class Array : public Element<FORMAT>{
     public:
-        typedef std::vector<Value<FORMAT> const *> ContentType;
+        typedef std::vector<Element<FORMAT> const *> ContentType;
 
 
         Array(std::string const & arrayname, int indentrange);
@@ -14,6 +14,7 @@ namespace TrustEngine{ namespace Serialization{
 
 
         ContentType elements;
+        int getIndent() const ;
     private:
         int indentRange = 0;
         std::string name;

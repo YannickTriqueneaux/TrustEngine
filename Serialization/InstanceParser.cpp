@@ -25,10 +25,10 @@ namespace TrustEngine{ namespace Serialization{
         if (instanceDesc->isAnArray()){
             Array<FORMAT> * arrayElement = new Array<FORMAT>(instancelabel, indent);
             auto succeed = fillArray<FORMAT>(*arrayElement, instance);
-            arrayElement = arrayElement;
+            valueResult = arrayElement;
             return succeed;
         }
-        else if (instanceDesc->isAGeneric()){
+        else if (instanceDesc->isAGeneric() || instanceDesc->isAContainer()){
             Object<FORMAT> * objectvalue = new Object < FORMAT >(instancelabel, indent);
             auto succeed = fillObject<FORMAT>(*objectvalue, instance);
             valueResult = objectvalue;
@@ -89,9 +89,28 @@ namespace TrustEngine{ namespace Serialization{
     }
 
     template<typename FORMAT>
-    bool fillArray(Array<FORMAT> & arrayvalue, Instance const & instance){        
+    bool fillArray(Array<FORMAT> & arrayvalue, Instance const & arrayInstance){
+        using namespace TrustEngine::System::StringHelper;
+        bool succeed = true;
         auto & array = arrayvalue.elements;
+        auto arrayeDscriptor = static_cast<ArrayDescriptor const *>(arrayInstance.getType());
+        std::vector<Instance> elements = std::move(arrayeDscriptor->getInstancesOfElements(arrayInstance));
 
+
+        std::for_each(elements.begin(), elements.end(), [&](std::vector<Instance>::value_type const & elmtInstance){
+            if (elmtInstance.isEmpty()){
+                succeed = false;
+                return;
+            }
+            else{
+                Element<FORMAT> * element = nullptr;
+                succeed = getElementFormInstance(element, elmtInstance, nullptr, arrayvalue.getIndent() + 1) && succeed;
+                if (element){
+                    array << element;
+                }
+            }
+
+        });
         return true;
     }
 
