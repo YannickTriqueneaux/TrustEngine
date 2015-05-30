@@ -12,7 +12,7 @@ public:
     * @param parent instance
     * @return an empty Instance of the filed is not found into the given parent
     */
-    Instance & getInstance(Instance const & parent) const;
+    Instance getInstance(Instance const & parent) const;
 
     /**
     * @return the name of the field
@@ -25,7 +25,7 @@ public:
     Descriptor const & getType() const;
 private:
     Descriptor const * descriptor;
-    std::string const * fieldName;
+    std::string const fieldName;
     unsigned int offset;
 
 private:

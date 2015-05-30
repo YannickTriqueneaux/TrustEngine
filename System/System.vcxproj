@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClInclude Include="Guid.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="LinuxPublic.h" />
     <ClInclude Include="Macro.h" />
     <ClInclude Include="MapHelper.h" />
     <ClInclude Include="Meta.h" />
@@ -92,6 +93,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="VectorHelper.h" />
+    <ClInclude Include="WindowsPublic.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="code.cpp">

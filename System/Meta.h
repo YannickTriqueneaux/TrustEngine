@@ -12,7 +12,7 @@ struct static_if_else<true, IfTrue, IfFalse>
 template <class IfTrue, class IfFalse>
 struct static_if_else<false, IfTrue, IfFalse>
 {
-	typedef IfTrue IfFalse;
+    typedef IfTrue type;
 };
 
 

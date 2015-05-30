@@ -11,10 +11,19 @@
 #define _BEGIN_TE_SYSTEM_NAMESPACE namespace TrustEngine{ namespace System{
 #define _END_TE_SYSTEM_NAMESPACE };};//TENS
 
-#include "targetver.h"
+
+#if defined WIN32
+    #include "WindowsPublic.h"
+#elif defined __LINUX__
+    #include "LinuxPublic.h"
+#endif // __LINUX__
+
+
 
 
 #pragma warning( disable : 4530)
+
+//common includes
 #include <vector>
 #include <algorithm>
 #include <map>
@@ -23,18 +32,17 @@
 #include <fstream>
 #include <sstream>
 #include <cmath>
-#include <codecvt>
-#include <conio.h>
-//
-#include <combaseapi.h>
-//
 #include <assert.h>
+
+
+//System Lib includes
+
 #include "Macro.h"
 #include "Meta.h"
 #include "VectorHelper.h"
 #include "MapHelper.h"
 #include "StringHelper.h"
-#include "Guid.h"
+//#include "Guid.h"
 #include "Input.h"
 
 

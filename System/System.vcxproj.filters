@@ -44,6 +44,12 @@
     <ClInclude Include="MapHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WindowsPublic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinuxPublic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StringHelper.cpp">
